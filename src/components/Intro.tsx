@@ -1,0 +1,3 @@
+"use client";
+import { useEffect, useState } from "react";
+export function Intro(){const [show,setShow]=useState(false);useEffect(()=>{if(sessionStorage.getItem("intro-seen"))return;const frame=window.requestAnimationFrame(()=>setShow(true));const t=window.setTimeout(()=>{sessionStorage.setItem("intro-seen","1");setShow(false)},3000);return()=>{window.cancelAnimationFrame(frame);window.clearTimeout(t)}},[]);if(!show)return null;return <div className="intro" role="status" aria-label="Hadrian Rafael"><span>HADRIAN</span><span className="accent">RAFAEL</span><button onClick={()=>{sessionStorage.setItem("intro-seen","1");setShow(false)}}>Skip intro</button></div>}

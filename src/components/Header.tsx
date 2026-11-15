@@ -1,0 +1,3 @@
+import Link from "next/link";
+import type { Locale } from "@/data/content";
+export function Header({locale,nav}:{locale:Locale;nav:readonly string[]}){const labels=["PT","EN","ES"];return <header className="site-header"><Link className="brand" href={`/${locale}`}>HR<span>.</span></Link><nav aria-label="Primary navigation">{nav.map((item,i)=><a key={item} href={`#${["about","experience","skills","services","contact"][i]}`}>{item}</a>)}</nav><div className="locale-switcher" aria-label="Language selector">{labels.map((label,i)=><Link key={label} className={locale===(["pt","en","es"] as Locale[])[i]?"active":""} href={`/${(["pt","en","es"] as Locale[])[i]}`}>{label}</Link>)}</div></header>}
