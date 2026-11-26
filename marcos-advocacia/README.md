@@ -204,10 +204,22 @@ WhatsApp e os dados estruturados leem dali.
 
 Textos, temas e perguntas frequentes estão em `src/content/areas.ts`.
 
-### Foto do advogado
+### Fotos e logotipo
 
-O site não usa fotos (nenhuma foi fornecida). Para incluir uma, salve-a em `public/images/` e substitua o cartão de
-identificação em `src/app/sobre/page.tsx` por `next/image`.
+Arquivos em `src/assets/` (importados pelo `next/image`, que gera versões otimizadas e um *placeholder*
+desfocado):
+
+| Arquivo | Onde aparece |
+| --- | --- |
+| `marca/monograma-dourado.png` | cabeçalho, rodapé e imagens de compartilhamento (fundo transparente) |
+| `marca/icone-512.png` | ícone do site, ícone do iPhone (`src/app/icon.png`, `src/app/apple-icon.png`) e logo nos dados estruturados |
+| `fotos/marcos-mesa.jpg` | início, seção “O escritório” |
+| `fotos/marcos-retrato.jpg` | página Sobre (cartão do advogado) e foto do advogado nos dados estruturados |
+| `fotos/marcos-escritorio.jpg`, `fotos/marcos-computador.jpg` | página Sobre |
+| `fotos/marcos-avatar.jpg` | assinatura dos artigos e página da campanha |
+
+Para trocar uma foto, substitua o arquivo mantendo o nome (formato retrato, cerca de 1200×1750 px) e rode
+`npm run build`.
 
 ## Diretrizes de ética (obrigatórias ao editar)
 

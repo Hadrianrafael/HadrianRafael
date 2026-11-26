@@ -133,3 +133,28 @@ Página inteira: desktop em 1440 px (reduzido para 720 px) e celular em 390 px (
 
 Testes feitos em Chromium (desktop e emulação de iPhone 13 e Pixel 7). Recomenda-se conferir em um iPhone (Safari) e
 um Android reais após o primeiro deploy de pré-visualização do projeto `marcos-advocacia`.
+
+## 10. Atualização — fotos e logotipo oficiais (26/11/2026)
+
+Incluídos os arquivos fornecidos pelo escritório:
+
+- **Monograma oficial** (MD com a balança), extraído do logotipo dourado com fundo transparente, no cabeçalho, no
+  rodapé, nas imagens de compartilhamento, no ícone do site e no ícone do iPhone. A palavra “ADVOGADOS” do logotipo
+  não foi usada para não conflitar com o nome “MDSilva Advocacia” adotado no site (ver pendência abaixo). A versão
+  prateada não foi utilizada.
+- **Quatro fotografias** do advogado: página inicial (seção “O escritório”), página Sobre (cartão principal e duas
+  fotos do escritório), assinatura dos artigos e página da campanha (avatar). Faixas pretas no rodapé de duas fotos
+  foram recortadas.
+
+Verificações após a inclusão: TypeScript, ESLint e build sem erros; 17 rotas sem problemas de SEO, links,
+números ou acessibilidade (axe: 0 violações); 125 links de WhatsApp coerentes; sem violações de CSP.
+
+Lighthouse mobile: início 91, Sobre 91–92, artigo 92 em desempenho, e 100 em acessibilidade, boas práticas e SEO;
+CLS 0. Duas correções foram necessárias: a moldura decorativa da foto na página inicial passou a envolver só a
+imagem, e o cartão com a foto na página Sobre deixou de ter a animação de entrada, que atrasava o LCP (estava em 84).
+
+As capturas da seção 8 foram atualizadas com as fotos.
+
+**Pendência para o escritório:** o logotipo diz “MD Advogados”; o site, o Facebook e o briefing usam “MDSilva
+Advocacia”. Confirmar o nome oficial. Se for “MD Advogados”, a troca é feita em `src/config/site.ts` e no logotipo
+tipográfico (`src/components/ui/Logo.tsx`).
