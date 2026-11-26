@@ -95,15 +95,20 @@ não deste site.
 
 ### Trava de produção (`vercel.json`)
 
-O arquivo [`vercel.json`](vercel.json) desta pasta (lido somente pelo projeto `marcos-advocacia`) contém:
+O arquivo [`vercel.json`](vercel.json) desta pasta (lido somente pelo projeto `marcos-advocacia`) controla a
+publicação automática a partir da `main`:
 
 ```json
-"git": { "deploymentEnabled": { "main": false } }
+"git": { "deploymentEnabled": { "main": true } }
 ```
 
-Com isso, commits e merges na branch `main` **não publicam em produção**. Branches e pull requests continuam
-gerando deploys de pré-visualização, que não são indexados (`robots.txt` bloqueia previews). Para autorizar a
-publicação, troque `false` por `true` e faça commit em `main`: esse commit dispara o deploy de produção.
+**Situação atual: produção liberada (26/11/2026).** Cada commit na `main` que altere esta pasta publica o site.
+Para suspender a publicação automática, troque `true` por `false` e faça commit em `main`. Branches e pull
+requests continuam gerando deploys de pré-visualização, que não são indexados (`robots.txt` bloqueia previews) e
+exigem login na Vercel.
+
+Projeto na Vercel: `marcos-advocacia` (time HRTech), Root Directory `marcos-advocacia`. Proteção de deploys:
+pré-visualizações e URLs únicas de deploy exigem login; os domínios de produção são públicos.
 
 ### Passo a passo
 
