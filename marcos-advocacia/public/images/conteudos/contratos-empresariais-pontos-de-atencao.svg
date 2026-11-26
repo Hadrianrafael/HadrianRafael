@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Direito Empresarial">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f1e3b"/><stop offset="1" stop-color="#070e1c"/></linearGradient>
+<radialGradient id="glow" cx="0.78" cy="0.3" r="0.6"><stop offset="0" stop-color="#47679c" stop-opacity="0.45"/><stop offset="1" stop-color="#47679c" stop-opacity="0"/></radialGradient>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3cfa3"/><stop offset="1" stop-color="#977645"/></linearGradient>
+</defs>
+<rect width="1200" height="750" fill="url(#bg)"/>
+<rect width="1200" height="750" fill="url(#glow)"/>
+<line x1="0" y1="0" x2="0" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="120" y1="0" x2="120" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="240" y1="0" x2="240" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="360" y1="0" x2="360" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="480" y1="0" x2="480" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="600" y1="0" x2="600" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="720" y1="0" x2="720" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="840" y1="0" x2="840" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="960" y1="0" x2="960" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="1080" y1="0" x2="1080" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="1200" y1="0" x2="1200" y2="750" stroke="#fff" stroke-opacity="0.035"/>
+<line x1="640" y1="190" x2="967.0745084946975" y2="190" stroke="url(#g)" stroke-opacity="0.75" stroke-width="2"/><line x1="640" y1="234" x2="937.629809314385" y2="234" stroke="url(#g)" stroke-opacity="0.69" stroke-width="2"/><line x1="640" y1="278" x2="1059.7266997257248" y2="278" stroke="url(#g)" stroke-opacity="0.63" stroke-width="2"/><line x1="640" y1="322" x2="966.2386349402368" y2="322" stroke="url(#g)" stroke-opacity="0.5700000000000001" stroke-width="2"/><line x1="640" y1="366" x2="865.2015706105158" y2="366" stroke="url(#g)" stroke-opacity="0.51" stroke-width="2"/><line x1="640" y1="410" x2="1065.6981417071074" y2="410" stroke="url(#g)" stroke-opacity="0.45" stroke-width="2"/><line x1="640" y1="454" x2="1040.70269592572" y2="454" stroke="url(#g)" stroke-opacity="0.39" stroke-width="2"/><line x1="640" y1="498" x2="956.3134320825338" y2="498" stroke="url(#g)" stroke-opacity="0.33" stroke-width="2"/><line x1="640" y1="542" x2="1036.9148525735363" y2="542" stroke="url(#g)" stroke-opacity="0.27" stroke-width="2"/>
+<line x1="80" y1="630" x2="150" y2="630" stroke="#cdb07a" stroke-width="2"/>
+<text x="80" y="670" fill="#cdb07a" font-family="Georgia, serif" font-size="30" letter-spacing="3">DIREITO EMPRESARIAL</text>
+<text x="80" y="120" fill="#ffffff" fill-opacity="0.85" font-family="Georgia, serif" font-size="40">MD<tspan fill="#e3cfa3">Silva</tspan></text>
+<text x="82" y="150" fill="#ffffff" fill-opacity="0.5" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="6">ADVOCACIA</text>
+</svg>

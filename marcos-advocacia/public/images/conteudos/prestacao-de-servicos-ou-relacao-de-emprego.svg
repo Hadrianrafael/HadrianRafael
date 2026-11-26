@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Direito do Trabalho">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f1e3b"/><stop offset="1" stop-color="#070e1c"/></linearGradient>
+<radialGradient id="glow" cx="0.78" cy="0.3" r="0.6"><stop offset="0" stop-color="#47679c" stop-opacity="0.45"/><stop offset="1" stop-color="#47679c" stop-opacity="0"/></radialGradient>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3cfa3"/><stop offset="1" stop-color="#977645"/></linearGradient>
+</defs>
+<rect width="1200" height="750" fill="url(#bg)"/>
+<rect width="1200" height="750" fill="url(#glow)"/>
+<line x1="0" y1="0" x2="0" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="120" y1="0" x2="120" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="240" y1="0" x2="240" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="360" y1="0" x2="360" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="480" y1="0" x2="480" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="600" y1="0" x2="600" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="720" y1="0" x2="720" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="840" y1="0" x2="840" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="960" y1="0" x2="960" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="1080" y1="0" x2="1080" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="1200" y1="0" x2="1200" y2="750" stroke="#fff" stroke-opacity="0.035"/>
+<circle cx="860.6625218689442" cy="355.2424674038775" r="90" stroke="url(#g)" stroke-opacity="0.55" fill="none"/><circle cx="880.18330456689" cy="348.35769111989066" r="136" stroke="url(#g)" stroke-opacity="0.49000000000000005" fill="none"/><circle cx="877.1911669149995" cy="342.413931323681" r="182" stroke="url(#g)" stroke-opacity="0.43000000000000005" fill="none"/><circle cx="894.8247857950628" cy="342.0136843412183" r="228" stroke="url(#g)" stroke-opacity="0.37000000000000005" fill="none"/><circle cx="880.0134741514921" cy="343.12854849966243" r="274" stroke="url(#g)" stroke-opacity="0.31000000000000005" fill="none"/><circle cx="892.3645863868296" cy="354.4486923585646" r="320" stroke="url(#g)" stroke-opacity="0.25000000000000006" fill="none"/><circle cx="882.3069052025676" cy="338.11876703286543" r="366" stroke="url(#g)" stroke-opacity="0.19000000000000006" fill="none"/>
+<line x1="80" y1="630" x2="150" y2="630" stroke="#cdb07a" stroke-width="2"/>
+<text x="80" y="670" fill="#cdb07a" font-family="Georgia, serif" font-size="30" letter-spacing="3">DIREITO DO TRABALHO</text>
+<text x="80" y="120" fill="#ffffff" fill-opacity="0.85" font-family="Georgia, serif" font-size="40">MD<tspan fill="#e3cfa3">Silva</tspan></text>
+<text x="82" y="150" fill="#ffffff" fill-opacity="0.5" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="6">ADVOCACIA</text>
+</svg>

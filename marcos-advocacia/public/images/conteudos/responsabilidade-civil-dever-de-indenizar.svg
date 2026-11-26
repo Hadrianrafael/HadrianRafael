@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Direito Civil">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f1e3b"/><stop offset="1" stop-color="#070e1c"/></linearGradient>
+<radialGradient id="glow" cx="0.78" cy="0.3" r="0.6"><stop offset="0" stop-color="#47679c" stop-opacity="0.45"/><stop offset="1" stop-color="#47679c" stop-opacity="0"/></radialGradient>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3cfa3"/><stop offset="1" stop-color="#977645"/></linearGradient>
+</defs>
+<rect width="1200" height="750" fill="url(#bg)"/>
+<rect width="1200" height="750" fill="url(#glow)"/>
+<line x1="0" y1="0" x2="0" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="120" y1="0" x2="120" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="240" y1="0" x2="240" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="360" y1="0" x2="360" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="480" y1="0" x2="480" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="600" y1="0" x2="600" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="720" y1="0" x2="720" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="840" y1="0" x2="840" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="960" y1="0" x2="960" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="1080" y1="0" x2="1080" y2="750" stroke="#fff" stroke-opacity="0.035"/><line x1="1200" y1="0" x2="1200" y2="750" stroke="#fff" stroke-opacity="0.035"/>
+<path d="M600 170 V560 M430 250 H770 M430 250 L360 420 H500 Z M770 250 L700 420 H840 Z M520 560 H680" stroke="url(#g)" stroke-width="2" fill="none" stroke-opacity="0.75" transform="translate(194.45911617018282 0)"/>
+<line x1="80" y1="630" x2="150" y2="630" stroke="#cdb07a" stroke-width="2"/>
+<text x="80" y="670" fill="#cdb07a" font-family="Georgia, serif" font-size="30" letter-spacing="3">DIREITO CIVIL</text>
+<text x="80" y="120" fill="#ffffff" fill-opacity="0.85" font-family="Georgia, serif" font-size="40">MD<tspan fill="#e3cfa3">Silva</tspan></text>
+<text x="82" y="150" fill="#ffffff" fill-opacity="0.5" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="6">ADVOCACIA</text>
+</svg>
