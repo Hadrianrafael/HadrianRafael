@@ -4,7 +4,8 @@ Site institucional do escritório de advocacia de **Marcos Danilo da Silva (OAB/
 **São Paulo** e **Votuporanga**. Caráter exclusivamente informativo, em conformidade com o Estatuto da Advocacia, o
 Código de Ética e Disciplina da OAB e o Provimento nº 205/2021.
 
-> Relatório de testes e pendências: [`docs/RELATORIO-ENTREGA.md`](docs/RELATORIO-ENTREGA.md)
+> Relatório de testes e pendências: [`docs/RELATORIO-ENTREGA.md`](docs/RELATORIO-ENTREGA.md) ·
+> Auditoria visual com capturas: [`docs/auditoria-visual/RELATORIO-AUDITORIA.md`](docs/auditoria-visual/RELATORIO-AUDITORIA.md)
 
 ## Tecnologias
 
