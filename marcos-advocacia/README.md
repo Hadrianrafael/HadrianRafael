@@ -87,18 +87,48 @@ ID fictício foi inserido. A lista comentada está em [`.env.example`](.env.exam
 
 ## Publicação na Vercel
 
-O projeto está na pasta `marcos-advocacia/` do repositório (o restante do repositório é outro projeto e não deve ser
-alterado).
+O site é publicado por um **projeto Vercel próprio, chamado `marcos-advocacia`**, com Root Directory
+`marcos-advocacia`. O projeto `hadrianrafael-public`, que já existe na mesma conta, publica o portfólio da raiz deste
+repositório e **não deve ser alterado**. O deploy de pré-visualização que ele gera nos pull requests é do portfólio,
+não deste site.
 
-1. Em [vercel.com/new](https://vercel.com/new), importe o repositório do GitHub.
-2. Em **Root Directory**, selecione `marcos-advocacia`. O framework (Next.js) e os comandos são detectados
-   automaticamente (`npm install` / `npm run build`).
-3. Em **Environment Variables**, cadastre as variáveis disponíveis (ver tabela acima). No mínimo, recomenda-se
-   `NEXT_PUBLIC_SITE_URL` assim que o domínio estiver definido.
-4. Clique em **Deploy**. Deploys de pré-visualização recebem `robots.txt` bloqueando a indexação; apenas o ambiente
-   de produção é indexável.
-5. **Domínio:** em Project → Settings → Domains, adicione o domínio do escritório e siga as instruções de DNS. Depois
-   atualize `NEXT_PUBLIC_SITE_URL` e faça um novo deploy.
+### Trava de produção (`vercel.json`)
+
+O arquivo [`vercel.json`](vercel.json) desta pasta (lido somente pelo projeto `marcos-advocacia`) contém:
+
+```json
+"git": { "deploymentEnabled": { "main": false } }
+```
+
+Com isso, commits e merges na branch `main` **não publicam em produção**. Branches e pull requests continuam
+gerando deploys de pré-visualização, que não são indexados (`robots.txt` bloqueia previews). Para autorizar a
+publicação, troque `false` por `true` e faça commit em `main`: esse commit dispara o deploy de produção.
+
+### Passo a passo
+
+1. **Mesclar o PR** que adiciona esta pasta à `main`. Isso é seguro: a trava acima impede a publicação deste site,
+   e o portfólio não muda (seu código fica fora de `marcos-advocacia/`). O `hadrianrafael-public` fará o
+   redeploy habitual do portfólio, com o mesmo conteúdo.
+2. Em [vercel.com/new](https://vercel.com/new), no mesmo time da Vercel, clique em **Import** no repositório
+   `Hadrianrafael/HadrianRafael`.
+3. Na tela **Configure Project**:
+   - **Project Name:** `marcos-advocacia`
+   - **Framework Preset:** Next.js (detectado)
+   - **Root Directory:** clique em **Edit** e selecione `marcos-advocacia`
+   - **Build/Install Commands:** manter o padrão (o `vercel.json` define `npm ci` e `npm run build`)
+   - **Environment Variables:** cadastrar as disponíveis (ver tabela acima)
+4. Clique em **Deploy**. Por causa da trava, a Vercel pode criar o projeto sem publicar nada, ou fazer um único
+   deploy inicial no endereço `marcos-advocacia.vercel.app` (ou variação). Se houver esse deploy inicial e você
+   ainda não quiser o site no ar, use **Settings → Deployment Protection → Vercel Authentication** para restringir
+   o acesso, ou exclua o deploy em **Deployments**.
+5. Confira a pré-visualização em um pull request ou branch qualquer.
+6. **Publicar (somente com autorização):** altere `"main": false` para `"main": true` no `vercel.json` e faça
+   commit em `main`.
+7. **Domínio:** em Project → Settings → Domains, adicione o domínio do escritório e siga as instruções de DNS. Depois
+   cadastre `NEXT_PUBLIC_SITE_URL` e faça um novo deploy.
+
+> As variáveis de ambiente são lidas no build: após criar ou alterar uma variável, é preciso novo deploy
+> (Deployments → ⋯ → Redeploy).
 
 ## Integrações
 

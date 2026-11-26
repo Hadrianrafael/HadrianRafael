@@ -85,14 +85,17 @@ resultados, CNPJ, horários de atendimento ou avaliações.
 
 ## 6. Como colocar em produção
 
-1. Revisar os conteúdos (seção 5) e aprovar a publicação.
-2. Mesclar o pull request do branch `claude/marcos-advocacia-site-gbki03`. Se preferir um repositório exclusivo, crie
-   `marcos-advocacia` no GitHub e copie o conteúdo da pasta `marcos-advocacia/` para a raiz do novo repositório.
-3. Na Vercel: **Add New → Project**, importar o repositório, definir **Root Directory = `marcos-advocacia`** (apenas
-   se o projeto continuar dentro deste repositório) e fazer o deploy.
-4. Configurar o domínio e as variáveis da seção 4, depois fazer um novo deploy.
-5. Testar em produção: formulário (mensagem real), WhatsApp das duas unidades, aviso de cookies (se houver
+O passo a passo completo está no [README](../README.md#publicação-na-vercel). Em resumo:
+
+1. Revisar os conteúdos (seção 5).
+2. Mesclar o PR #1. O `vercel.json` da pasta bloqueia a publicação automática a partir da `main`.
+3. Criar na Vercel um projeto **novo**, chamado `marcos-advocacia`, com **Root Directory = `marcos-advocacia`**.
+   Não alterar o projeto `hadrianrafael-public` (portfólio).
+4. Cadastrar o domínio e as variáveis da seção 4.
+5. Com autorização, trocar `"main": false` por `"main": true` no `vercel.json` e fazer commit em `main`: é esse
+   commit que publica em produção.
+6. Testar em produção: formulário (mensagem real), WhatsApp das duas unidades e aviso de cookies (se houver
    GA/GTM).
-6. Enviar o `sitemap.xml` no Search Console e atualizar o Google Business Profile das duas unidades.
+7. Enviar o `sitemap.xml` no Search Console e atualizar o Google Business Profile das duas unidades.
 
 > Nenhum deploy em produção foi feito sem autorização.
