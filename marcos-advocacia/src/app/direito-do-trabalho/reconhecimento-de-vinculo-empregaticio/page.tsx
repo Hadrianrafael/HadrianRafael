@@ -17,9 +17,9 @@ const PATH = "/direito-do-trabalho/reconhecimento-de-vinculo-empregaticio";
 const TOPIC = "Reconhecimento de vínculo empregatício";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Reconhecimento de vínculo empregatício: requisitos e orientação",
+  title: "Reconhecimento de vínculo empregatício",
   description:
-    "Entenda o que caracteriza a relação de emprego segundo a CLT, os requisitos legais, a diferença entre prestação de serviços e vínculo empregatício e os direitos que podem estar envolvidos.",
+    "O que caracteriza a relação de emprego segundo a CLT, os requisitos legais e a diferença entre prestação de serviços e vínculo empregatício.",
   path: PATH,
   keywords: [
     "reconhecimento de vínculo empregatício",
@@ -160,7 +160,7 @@ export default function Page() {
                       href={`#${s.id}`}
                       className="-ml-px flex gap-3 border-l border-transparent py-2 pl-4 text-sm text-slate transition-colors hover:border-gold-500 hover:text-navy-900"
                     >
-                      <span className="font-serif text-gold-600">{String(i + 1).padStart(2, "0")}</span>
+                      <span className="font-serif text-gold-700">{String(i + 1).padStart(2, "0")}</span>
                       {s.label}
                     </a>
                   </li>
@@ -229,7 +229,7 @@ export default function Page() {
                     style={{ "--reveal-delay": `${(i % 2) * 80}ms` } as React.CSSProperties}
                     className={`card card-hover p-6 ${i === requirements.length - 1 ? "sm:col-span-2" : ""}`}
                   >
-                    <span className="font-serif text-sm font-semibold tracking-[0.2em] text-gold-600">
+                    <span className="font-serif text-sm font-semibold tracking-[0.2em] text-gold-700">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3 className="mt-3 font-serif text-2xl font-semibold text-navy-900">{r.title}</h3>

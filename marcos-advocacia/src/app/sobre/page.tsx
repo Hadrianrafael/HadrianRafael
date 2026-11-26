@@ -9,8 +9,8 @@ import { ContactBand } from "@/components/sections/ContactBand";
 import { JsonLd } from "@/components/ui/JsonLd";
 
 export const metadata: Metadata = pageMetadata({
-  title: `Sobre o escritório e o advogado ${site.lawyer.name}`,
-  description: `Conheça o escritório ${site.brand} e o advogado ${site.lawyer.name}, bacharel em Direito formado em ${site.lawyer.graduationYear}, inscrito na ${site.lawyer.oab}. Unidades em São Paulo e Votuporanga.`,
+  title: `Sobre o advogado ${site.lawyer.name}`,
+  description: `Conheça o escritório ${site.brand} e o advogado ${site.lawyer.name}, formado em Direito em ${site.lawyer.graduationYear}, inscrito na ${site.lawyer.oab}.`,
   path: "/sobre",
 });
 
@@ -120,7 +120,7 @@ export default function SobrePage() {
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {commitments.map((c, i) => (
                   <div key={c.title} className="card p-6">
-                    <span className="font-serif text-sm font-semibold tracking-[0.2em] text-gold-600">
+                    <span className="font-serif text-sm font-semibold tracking-[0.2em] text-gold-700">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3 className="mt-3 font-serif text-2xl font-semibold text-navy-900">{c.title}</h3>
@@ -142,7 +142,7 @@ export default function SobrePage() {
                       </span>
                       <ArrowUpRight
                         aria-hidden="true"
-                        className="size-5 shrink-0 text-gold-600 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        className="size-5 shrink-0 text-gold-700 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                       />
                     </Link>
                   </li>

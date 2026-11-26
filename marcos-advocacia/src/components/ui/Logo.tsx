@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { site } from "@/config/site";
 
 interface LogoProps {
   tone?: "light" | "dark";
@@ -12,7 +11,6 @@ export function Logo({ tone = "dark", className = "" }: LogoProps) {
   return (
     <Link
       href="/"
-      aria-label={`${site.brand}: página inicial`}
       className={`group inline-flex items-center gap-3 ${className}`}
     >
       <span
@@ -34,15 +32,16 @@ export function Logo({ tone = "dark", className = "" }: LogoProps) {
             isLight ? "text-white" : "text-navy-900"
           }`}
         >
-          MD<span className={isLight ? "text-gold-300" : "text-gold-600"}>Silva</span>
+          MD<span className={isLight ? "text-gold-300" : "text-gold-700"}>Silva</span>
         </span>
         <span
           className={`mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.34em] ${
             isLight ? "text-white/60" : "text-slate"
           }`}
         >
-          Advocacia
+          {" "}Advocacia
         </span>
+        <span className="sr-only">, página inicial</span>
       </span>
     </Link>
   );

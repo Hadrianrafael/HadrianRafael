@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "direito empresarial",
     ],
   }),
-  title: { absolute: `${site.brand} | Advogado em São Paulo e Votuporanga · ${site.lawyer.oab}` },
+  title: { absolute: `${site.brand} | Advogado em São Paulo e Votuporanga` },
 };
 
 const facts = [
@@ -94,7 +94,7 @@ export default function HomePage() {
                 } ${i >= 2 ? "border-t border-white/[0.07] lg:border-t-0" : ""}`}
               >
                 <dt className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-white/45">{fact.label}</dt>
-                <dd className="mt-2 font-serif text-lg font-semibold text-white sm:text-xl">{fact.value}</dd>
+                <dd className="mt-2 font-serif text-base font-semibold text-white sm:text-xl">{fact.value}</dd>
               </div>
             ))}
           </dl>
@@ -136,7 +136,7 @@ export default function HomePage() {
             </div>
             <Link href="/sobre" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy-800 link-underline">
               Conheça o escritório
-              <ArrowRight aria-hidden="true" className="size-4 text-gold-600" />
+              <ArrowRight aria-hidden="true" className="size-4 text-gold-700" />
             </Link>
           </div>
         </div>
@@ -167,7 +167,7 @@ export default function HomePage() {
                   <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -right-32 size-96 rounded-full border border-gold-400/15" />
                 ) : null}
                 <div className="relative">
-                  <span className={`font-serif text-sm font-semibold tracking-[0.2em] ${featured ? "text-gold-400" : "text-gold-600"}`}>
+                  <span className={`font-serif text-sm font-semibold tracking-[0.2em] ${featured ? "text-gold-400" : "text-gold-700"}`}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className={`display mt-4 ${featured ? "text-4xl sm:text-5xl" : "text-3xl"} ${featured ? "text-white" : "text-navy-900"}`}>

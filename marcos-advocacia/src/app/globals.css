@@ -35,7 +35,7 @@
 
   @keyframes fade-up {
     from {
-      opacity: 0;
+      opacity: 0.35;
       transform: translateY(14px);
     }
     to {
@@ -118,7 +118,7 @@
     font-weight: 600;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--color-gold-600);
+    color: var(--color-gold-700);
   }
   .eyebrow::before {
     content: "";

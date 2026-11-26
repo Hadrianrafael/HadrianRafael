@@ -123,7 +123,7 @@ export default async function ArticlePage(props: PageProps<"/conteudos/[slug]">)
                 </div>
               </div>
               <Link href="/conteudos" className="inline-flex items-center gap-2 text-sm font-semibold text-navy-800 link-underline">
-                <ArrowLeft aria-hidden="true" className="size-4 text-gold-600" />
+                <ArrowLeft aria-hidden="true" className="size-4 text-gold-700" />
                 Todos os conteúdos
               </Link>
             </div>

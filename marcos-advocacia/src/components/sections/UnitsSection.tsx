@@ -42,7 +42,7 @@ export function UnitsSection({
                   rel="noopener noreferrer"
                   className="group flex gap-3 text-[0.95rem] leading-relaxed text-slate hover:text-navy-900"
                 >
-                  <MapPin aria-hidden="true" className="mt-1 size-4 shrink-0 text-gold-600" />
+                  <MapPin aria-hidden="true" className="mt-1 size-4 shrink-0 text-gold-700" />
                   <span>
                     {unit.street}, {unit.number}
                     <br />
@@ -53,11 +53,11 @@ export function UnitsSection({
                   </span>
                 </a>
                 <a href={telUrl(unit.phoneE164)} data-channel={`telefone-${unit.id}`} className="flex items-center gap-3 text-[0.95rem] text-slate hover:text-navy-900">
-                  <Phone aria-hidden="true" className="size-4 shrink-0 text-gold-600" />
+                  <Phone aria-hidden="true" className="size-4 shrink-0 text-gold-700" />
                   {unit.phoneDisplay}
                 </a>
                 <a href={`mailto:${site.email}`} className="flex items-center gap-3 break-all text-[0.95rem] text-slate hover:text-navy-900">
-                  <Mail aria-hidden="true" className="size-4 shrink-0 text-gold-600" />
+                  <Mail aria-hidden="true" className="size-4 shrink-0 text-gold-700" />
                   {site.email}
                 </a>
               </address>

@@ -107,7 +107,7 @@ export function WhatsAppPicker({
         className="btn btn-gold mt-5 w-full"
       >
         <WhatsAppIcon className="size-[1.15rem]" />
-        Conversar com a unidade {selected.city}
+        Conversar com {selected.city}
         <ArrowUpRight aria-hidden="true" className="size-4" />
       </a>
       <p className="mt-3 text-center text-[0.7rem] leading-relaxed text-white/40">

@@ -3,7 +3,8 @@
 import { headers } from "next/headers";
 import { site } from "@/config/site";
 import { getContactConfig } from "@/lib/contact-config";
-import { contactSchema, type ContactField, type ContactState } from "@/lib/contact-schema";
+import { contactSchema } from "@/lib/contact-schema";
+import type { ContactField, ContactState } from "@/lib/contact-shared";
 import { rateLimit } from "@/lib/rate-limit";
 
 const MIN_FILL_MS = 3000;

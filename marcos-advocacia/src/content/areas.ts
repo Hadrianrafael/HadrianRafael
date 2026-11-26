@@ -165,7 +165,7 @@ export const areas: Record<AreaSlug, AreaContent> = {
     slug: "familia",
     path: "/direito-de-familia",
     label: "Direito de Família",
-    metaTitle: "Direito de Família e Sucessões em São Paulo e Votuporanga",
+    metaTitle: "Direito de Família em São Paulo e Votuporanga",
     metaDescription:
       "Informações sobre divórcio, guarda, pensão alimentícia, regulamentação de convivência, inventário e sucessões. Atendimento em São Paulo e Votuporanga.",
     keywords: [

@@ -108,7 +108,7 @@ export const site = {
   tagline:
     "Advocacia com responsabilidade, conhecimento jurídico e compromisso com a orientação de cada cliente.",
   description:
-    "Escritório de advocacia de Marcos Danilo da Silva (OAB/SP 309.058), com unidades em São Paulo e Votuporanga. Atuação em Direito do Trabalho, Direito Civil, Direito de Família e Direito Empresarial.",
+    "Escritório de Marcos Danilo da Silva (OAB/SP 309.058) em São Paulo e Votuporanga. Direito do Trabalho, Civil, de Família e Empresarial.",
   locale: "pt_BR",
 } as const;
 

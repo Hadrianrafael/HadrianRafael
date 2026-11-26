@@ -26,8 +26,11 @@ export function pageMetadata({
   images,
   keywords,
 }: PageMetaInput): Metadata {
+  const ogImages = images ?? ["/opengraph-image"];
+  // Títulos longos dispensam o sufixo da marca para não serem truncados no Google.
+  const fullTitle = title.length + ` | ${site.brand}`.length > 65 ? { absolute: title } : title;
   return {
-    title,
+    title: fullTitle,
     description,
     keywords,
     alternates: { canonical: path },
@@ -38,14 +41,14 @@ export function pageMetadata({
       url: path,
       title: ogTitle ?? title,
       description,
-      ...(images ? { images } : {}),
+      ...(type === "article" ? {} : { images: ogImages }),
       ...(type === "article" ? { publishedTime, modifiedTime } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: ogTitle ?? title,
       description,
-      ...(images ? { images } : {}),
+      ...(type === "article" ? {} : { images: ogImages }),
     },
   };
 }

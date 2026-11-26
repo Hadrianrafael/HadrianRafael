@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { contactTopics } from "./topics";
-
-export const MESSAGE_MAX = 1500;
+import { MESSAGE_MAX, type ContactField } from "./contact-shared";
 
 export const contactSchema = z.object({
   name: z
@@ -24,14 +23,13 @@ export const contactSchema = z.object({
   consent: z.literal("on", { error: "É necessário autorizar o tratamento dos dados para enviar a mensagem." }),
 });
 
-export type ContactField = keyof z.input<typeof contactSchema>;
-
-export interface ContactState {
-  status: "idle" | "success" | "invalid" | "error" | "unavailable" | "blocked";
-  message: string;
-  fieldErrors?: Partial<Record<ContactField, string>>;
-  /** Valores devolvidos para repreencher o formulário em caso de erro. */
-  values?: Partial<Record<Exclude<ContactField, "consent">, string>>;
-}
-
-export const initialContactState: ContactState = { status: "idle", message: "" };
+// Garante em tempo de compilação que o schema cobre exatamente os campos compartilhados.
+type SchemaFields = keyof z.input<typeof contactSchema>;
+export const schemaFieldsCheck: Record<SchemaFields, true> & Record<ContactField, true> = {
+  name: true,
+  phone: true,
+  email: true,
+  subject: true,
+  message: true,
+  consent: true,
+};

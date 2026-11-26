@@ -9,7 +9,7 @@ export function FaqList({ items }: { items: { q: string; a: string }[] }) {
           <details key={item.q} className="group py-1" data-reveal>
             <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-5 text-left [&::-webkit-details-marker]:hidden">
               <span className="font-serif text-xl font-semibold leading-snug text-navy-900 sm:text-[1.4rem]">{item.q}</span>
-              <span className="mt-1 grid size-8 shrink-0 place-items-center rounded-full border border-line text-gold-600 transition-transform duration-300 group-open:rotate-45">
+              <span className="mt-1 grid size-8 shrink-0 place-items-center rounded-full border border-line text-gold-700 transition-transform duration-300 group-open:rotate-45">
                 <Plus aria-hidden="true" className="size-4" />
               </span>
             </summary>

@@ -40,9 +40,9 @@ export function readingMinutes(article: Article): number {
   return Math.max(2, Math.round(words / 200));
 }
 
-export function formatDate(iso: string): string {
+export function formatDate(iso: string, style: "long" | "short" = "long"): string {
   const [y, m, d] = iso.split("-").map(Number);
-  return new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" }).format(
+  return new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: style, year: "numeric", timeZone: "UTC" }).format(
     new Date(Date.UTC(y!, (m ?? 1) - 1, d ?? 1)),
   );
 }

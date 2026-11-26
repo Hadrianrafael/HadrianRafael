@@ -22,7 +22,7 @@ export function ArticleCard({ article, priority = false }: { article: Article; p
         <div className="flex items-center gap-3 text-xs text-slate">
           <span className="font-semibold uppercase tracking-[0.16em] text-gold-700">{areaInfo[article.category].label}</span>
           <span aria-hidden="true" className="h-3 w-px bg-line" />
-          <time dateTime={article.date}>{formatDate(article.date)}</time>
+          <time dateTime={article.date} className="whitespace-nowrap">{formatDate(article.date, "short")}</time>
         </div>
         <h3 className="mt-3 font-serif text-[1.55rem] font-semibold leading-snug text-navy-900">
           <Link href={`/conteudos/${article.slug}`} className="after:absolute after:inset-0">
@@ -32,7 +32,7 @@ export function ArticleCard({ article, priority = false }: { article: Article; p
         <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-slate">{article.excerpt}</p>
         <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-navy-800">
           Ler conteúdo · {readingMinutes(article)} min
-          <ArrowUpRight aria-hidden="true" className="size-4 text-gold-600 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          <ArrowUpRight aria-hidden="true" className="size-4 text-gold-700 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </span>
       </div>
     </article>

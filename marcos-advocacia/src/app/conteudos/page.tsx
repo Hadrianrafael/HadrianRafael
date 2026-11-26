@@ -34,6 +34,7 @@ export default function ConteudosPage() {
 
       <section className="bg-ivory-depth py-16 sm:py-24">
         <div className="container-site">
+          <h2 className="sr-only">Lista de conteúdos</h2>
           <ArticleFilter options={options} total={articles.length}>
             <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {articles.map((article, i) => (

@@ -5,7 +5,7 @@ import Script from "next/script";
 import { useActionState, useEffect, useId, useRef, useState } from "react";
 import { AlertCircle, CheckCircle2, Info, Loader2, Send } from "lucide-react";
 import { sendContact } from "@/app/contato/actions";
-import { initialContactState, MESSAGE_MAX, type ContactField } from "@/lib/contact-schema";
+import { initialContactState, MESSAGE_MAX, type ContactField } from "@/lib/contact-shared";
 import { contactTopics } from "@/lib/topics";
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() || "";

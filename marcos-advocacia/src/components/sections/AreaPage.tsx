@@ -72,7 +72,7 @@ export function AreaPage({ area, children }: { area: AreaContent; children?: Rea
             {area.topics.map((topic, i) => {
               const content = (
                 <>
-                  <span className="font-serif text-sm font-semibold tracking-[0.2em] text-gold-600">
+                  <span className="font-serif text-sm font-semibold tracking-[0.2em] text-gold-700">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-4 font-serif text-[1.6rem] font-semibold leading-snug text-navy-900">{topic.title}</h3>
@@ -80,7 +80,7 @@ export function AreaPage({ area, children }: { area: AreaContent; children?: Rea
                   {topic.href ? (
                     <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-800">
                       Saiba mais
-                      <ArrowUpRight aria-hidden="true" className="size-4 text-gold-600 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      <ArrowUpRight aria-hidden="true" className="size-4 text-gold-700 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </span>
                   ) : null}
                 </>

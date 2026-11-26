@@ -16,6 +16,8 @@ export function Header() {
   const [areasOpen, setAreasOpen] = useState(false);
   const [lastPath, setLastPath] = useState(pathname);
   const areasRef = useRef<HTMLDivElement>(null);
+  // Evita que o clique logo após o hover feche o menu que acabou de abrir.
+  const openedByHover = useRef(false);
   const areasMenuId = useId();
   const mobileMenuId = useId();
 
@@ -116,13 +118,30 @@ export function Header() {
               O escritório
             </Link>
 
-            <div ref={areasRef} className="relative" onMouseLeave={() => setAreasOpen(false)}>
+            <div
+              ref={areasRef}
+              className="relative"
+              onMouseLeave={() => {
+                openedByHover.current = false;
+                setAreasOpen(false);
+              }}
+            >
               <button
                 type="button"
                 aria-expanded={areasOpen}
                 aria-controls={areasMenuId}
-                onClick={() => setAreasOpen((v) => !v)}
-                onMouseEnter={() => setAreasOpen(true)}
+                onClick={() => {
+                  if (openedByHover.current) {
+                    openedByHover.current = false;
+                    setAreasOpen(true);
+                  } else {
+                    setAreasOpen((v) => !v);
+                  }
+                }}
+                onMouseEnter={() => {
+                  if (!areasOpen) openedByHover.current = true;
+                  setAreasOpen(true);
+                }}
                 className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm transition-colors ${
                   areaActive || areasOpen ? "text-gold-300" : "text-white/80 hover:text-white"
                 }`}

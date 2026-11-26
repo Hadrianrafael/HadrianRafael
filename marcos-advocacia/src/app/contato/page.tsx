@@ -33,7 +33,7 @@ export default function ContatoPage() {
       <section id="unidades" className="bg-ivory-depth scroll-mt-24 py-16 sm:py-24">
         <div className="container-site grid gap-5 md:grid-cols-2">
           {unitList.map((unit) => (
-            <article key={unit.id} id={unit.id} className="card scroll-mt-28 overflow-hidden" data-reveal>
+            <article key={unit.id} id={unit.id} className="card scroll-mt-28 overflow-hidden">
               <div className="p-7 sm:p-9">
                 <p className="eyebrow">{unit.name}</p>
                 <h2 className="display mt-4 text-4xl text-navy-900">{unit.city}</h2>
@@ -85,7 +85,7 @@ export default function ContatoPage() {
                   data-channel="email"
                   className="mt-2 inline-flex items-center gap-2 break-all font-medium text-navy-900 link-underline"
                 >
-                  <Mail aria-hidden="true" className="size-4 shrink-0 text-gold-600" />
+                  <Mail aria-hidden="true" className="size-4 shrink-0 text-gold-700" />
                   {site.email}
                 </a>
               </div>
