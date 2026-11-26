@@ -12,6 +12,16 @@ import { ContactBand } from "./ContactBand";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { JsonLd } from "@/components/ui/JsonLd";
 
+/**
+ * O último tema ocupa as colunas restantes da linha, para a grade nunca terminar
+ * com células vazias (2 colunas em telas médias, 3 em telas grandes).
+ */
+function lastTopicSpan(total: number): string {
+  const sm = total % 2 === 1 ? "sm:col-span-2" : "";
+  const lg = ["lg:col-span-1", "lg:col-span-3", "lg:col-span-2"][total % 3] ?? "";
+  return `${sm} ${lg}`.trim();
+}
+
 export function AreaPage({ area, children }: { area: AreaContent; children?: ReactNode }) {
   const articles = getArticlesByArea(area.slug).slice(0, 3);
   const base = getSiteUrl();
@@ -86,7 +96,12 @@ export function AreaPage({ area, children }: { area: AreaContent; children?: Rea
                 </>
               );
               return (
-                <li key={topic.title} data-reveal style={{ "--reveal-delay": `${(i % 3) * 70}ms` } as React.CSSProperties} className="bg-white">
+                <li
+                  key={topic.title}
+                  data-reveal
+                  style={{ "--reveal-delay": `${(i % 3) * 70}ms` } as React.CSSProperties}
+                  className={`bg-white ${i === area.topics.length - 1 ? lastTopicSpan(area.topics.length) : ""}`}
+                >
                   {topic.href ? (
                     <Link href={topic.href} className="group block h-full p-7 transition-colors duration-500 hover:bg-ivory sm:p-8">
                       {content}

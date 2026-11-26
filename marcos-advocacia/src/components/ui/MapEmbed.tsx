@@ -10,9 +10,9 @@ import type { Unit } from "@/config/site";
  */
 export function MapEmbed({ unit }: { unit: Unit }) {
   const [loaded, setLoaded] = useState(false);
-  return (
-    <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line bg-sand sm:aspect-[16/10]">
-      {loaded ? (
+  if (loaded) {
+    return (
+      <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line bg-sand sm:aspect-[16/10]">
         <iframe
           title={`Mapa: ${unit.name}, ${unit.fullAddress}`}
           src={unit.mapsEmbedUrl}
@@ -21,27 +21,30 @@ export function MapEmbed({ unit }: { unit: Unit }) {
           referrerPolicy="no-referrer-when-downgrade"
           allowFullScreen
         />
-      ) : (
-        <div className="bg-navy-depth absolute inset-0 flex flex-col items-center justify-center gap-4 p-6 text-center text-white">
-          <div aria-hidden="true" className="bg-lines pointer-events-none absolute inset-0" />
-          <span className="relative grid size-12 place-items-center rounded-full bg-gold-500/15 text-gold-300">
-            <MapPin aria-hidden="true" className="size-6" />
-          </span>
-          <p className="relative max-w-xs text-sm text-white/75">{unit.fullAddress}</p>
-          <div className="relative flex flex-col gap-2 sm:flex-row">
-            <button type="button" onClick={() => setLoaded(true)} className="btn btn-gold min-h-11 py-2 text-[0.85rem]">
-              Carregar mapa
-            </button>
-            <a href={unit.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost-light min-h-11 py-2 text-[0.85rem]">
-              Abrir no Google Maps
-              <ArrowUpRight aria-hidden="true" className="size-4" />
-            </a>
-          </div>
-          <p className="relative max-w-xs text-[0.7rem] leading-relaxed text-white/45">
-            Ao carregar o mapa, o Google poderá coletar dados de navegação conforme a política dele.
-          </p>
-        </div>
-      )}
+      </div>
+    );
+  }
+
+  // Sem altura fixa: o conteúdo define a altura e nunca é cortado em telas estreitas.
+  return (
+    <div className="bg-navy-depth relative flex min-h-[16rem] flex-col items-center justify-center gap-4 overflow-hidden rounded-3xl border border-line px-6 py-8 text-center text-white sm:min-h-[18rem]">
+      <div aria-hidden="true" className="bg-lines pointer-events-none absolute inset-0" />
+      <span className="relative grid size-12 place-items-center rounded-full bg-gold-500/15 text-gold-300">
+        <MapPin aria-hidden="true" className="size-6" />
+      </span>
+      <p className="relative max-w-xs text-sm text-white/75">{unit.fullAddress}</p>
+      <div className="relative flex flex-col gap-2 sm:flex-row">
+        <button type="button" onClick={() => setLoaded(true)} className="btn btn-gold min-h-11 py-2 text-[0.85rem]">
+          Carregar mapa
+        </button>
+        <a href={unit.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost-light min-h-11 py-2 text-[0.85rem]">
+          Abrir no Google Maps
+          <ArrowUpRight aria-hidden="true" className="size-4" />
+        </a>
+      </div>
+      <p className="relative max-w-xs text-[0.7rem] leading-relaxed text-white/45">
+        Ao carregar o mapa, o Google poderá coletar dados de navegação conforme a política dele.
+      </p>
     </div>
   );
 }
