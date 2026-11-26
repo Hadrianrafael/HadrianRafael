@@ -12,6 +12,7 @@ import { RichBlocks } from "@/components/ui/RichText";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { ArticleCard } from "@/components/sections/ArticleCard";
 import { ContactBand } from "@/components/sections/ContactBand";
+import fotoAvatar from "@/assets/fotos/marcos-avatar.jpg";
 
 export const dynamicParams = false;
 
@@ -89,7 +90,7 @@ export default async function ArticlePage(props: PageProps<"/conteudos/[slug]">)
               src={article.cover.src}
               alt={article.cover.alt}
               fill
-              priority
+              preload
               sizes="(min-width: 896px) 832px, 100vw"
               unoptimized={article.cover.src.endsWith(".svg")}
               className="object-cover"
@@ -112,9 +113,12 @@ export default async function ArticlePage(props: PageProps<"/conteudos/[slug]">)
 
             <div className="mt-8 flex flex-col gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-4">
-                <span className="grid size-12 place-items-center rounded-xl bg-navy-900 font-serif text-lg font-semibold text-gold-300">
-                  MD
-                </span>
+                <Image
+                  src={fotoAvatar}
+                  alt=""
+                  sizes="56px"
+                  className="size-14 rounded-full object-cover ring-2 ring-gold-500/40 ring-offset-2 ring-offset-ivory"
+                />
                 <div>
                   <p className="text-sm font-semibold text-navy-900">{site.lawyer.name}</p>
                   <p className="text-xs text-slate">

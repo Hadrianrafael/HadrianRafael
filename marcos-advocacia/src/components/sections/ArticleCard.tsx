@@ -13,7 +13,7 @@ export function ArticleCard({ article, priority = false }: { article: Article; p
           alt={article.cover.alt}
           fill
           sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 85vw"
-          priority={priority}
+          loading={priority ? "eager" : "lazy"}
           unoptimized={article.cover.src.endsWith(".svg")}
           className="object-cover transition-transform duration-700 ease-[var(--ease-elegant)] group-hover:scale-[1.03]"
         />

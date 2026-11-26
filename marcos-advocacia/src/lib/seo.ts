@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSiteUrl, navigation, site, unitList } from "@/config/site";
+import iconeMarca from "@/assets/marca/icone-512.png";
+import fotoRetrato from "@/assets/fotos/marcos-retrato.jpg";
 
 interface PageMetaInput {
   title: string;
@@ -69,7 +71,7 @@ export function organizationJsonLd() {
         "@id": orgId,
         name: site.brand,
         url: base,
-        logo: `${base}/icon.svg`,
+        logo: `${base}${iconeMarca.src}`,
         image: `${base}/opengraph-image`,
         description: site.description,
         email: site.email,
@@ -101,6 +103,7 @@ export function organizationJsonLd() {
         "@id": personId,
         name: site.lawyer.name,
         jobTitle: "Advogado",
+        image: `${base}${fotoRetrato.src}`,
         email: site.email,
         worksFor: { "@id": orgId },
         knowsAbout,

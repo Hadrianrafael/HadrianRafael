@@ -1,5 +1,12 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { site } from "@/config/site";
+
+// Monograma oficial embutido como data URL (lido no build).
+const monograma = `data:image/png;base64,${readFileSync(
+  join(process.cwd(), "src/assets/marca/monograma-dourado.png"),
+).toString("base64")}`;
 
 export const ogSize = { width: 1200, height: 630 };
 
@@ -33,22 +40,8 @@ export function renderOgImage({ eyebrow, title }: { eyebrow: string; title: stri
           }}
         />
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: 14,
-              border: "1px solid rgba(205,176,122,0.5)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#e3cfa3",
-              fontSize: 28,
-              fontWeight: 700,
-            }}
-          >
-            MD
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={monograma} alt="" width={92} height={64} style={{ objectFit: "contain" }} />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", fontSize: 34, fontWeight: 700 }}>
               MD<span style={{ color: "#e3cfa3" }}>Silva</span>

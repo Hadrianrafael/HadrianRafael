@@ -1,31 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
+import monograma from "@/assets/marca/monograma-dourado.png";
 
 interface LogoProps {
   tone?: "light" | "dark";
   className?: string;
 }
 
-/** Logotipo tipográfico MDSilva Advocacia. */
+/** Monograma oficial (MD com a balança) + nome tipográfico MDSilva Advocacia. */
 export function Logo({ tone = "dark", className = "" }: LogoProps) {
   const isLight = tone === "light";
   return (
-    <Link
-      href="/"
-      className={`group inline-flex items-center gap-3 ${className}`}
-    >
-      <span
-        aria-hidden="true"
-        className={`relative grid size-10 place-items-center rounded-[10px] border transition-colors duration-500 ${
-          isLight
-            ? "border-gold-400/40 bg-white/[0.03] group-hover:border-gold-400/80"
-            : "border-gold-500/40 bg-navy-900 group-hover:border-gold-500"
-        }`}
-      >
-        <span className="font-serif text-[1.05rem] font-semibold leading-none tracking-tight text-gold-300">
-          MD
-        </span>
-        <span className="absolute inset-x-2 bottom-1.5 h-px bg-gold-400/50" />
-      </span>
+    <Link href="/" className={`group inline-flex items-center gap-3 ${className}`}>
+      <Image
+        src={monograma}
+        alt=""
+        loading="eager"
+        sizes="64px"
+        className="h-10 w-auto transition-opacity duration-500 group-hover:opacity-85"
+      />
       <span className="flex flex-col leading-none">
         <span
           className={`font-serif text-[1.45rem] font-semibold tracking-tight ${

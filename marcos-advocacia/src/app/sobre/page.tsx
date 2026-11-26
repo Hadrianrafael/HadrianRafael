@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getSiteUrl, navigation, site, unitList } from "@/config/site";
@@ -7,6 +8,9 @@ import { PageHero } from "@/components/sections/PageHero";
 import { UnitsSection } from "@/components/sections/UnitsSection";
 import { ContactBand } from "@/components/sections/ContactBand";
 import { JsonLd } from "@/components/ui/JsonLd";
+import fotoRetrato from "@/assets/fotos/marcos-retrato.jpg";
+import fotoEscritorio from "@/assets/fotos/marcos-escritorio.jpg";
+import fotoComputador from "@/assets/fotos/marcos-computador.jpg";
 
 export const metadata: Metadata = pageMetadata({
   title: `Sobre o advogado ${site.lawyer.name}`,
@@ -50,16 +54,24 @@ export default function SobrePage() {
 
       <section className="bg-ivory-depth py-20 sm:py-28">
         <div className="container-site grid gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Cartão de identificação (substituir por fotografia oficial quando disponível) */}
-          <div className="lg:col-span-5" data-reveal>
-            <div className="bg-navy-depth relative overflow-hidden rounded-[2rem] p-8 text-white sm:p-10 lg:sticky lg:top-28">
+          {/* Cartão de identificação com a fotografia oficial (acima da dobra: sem animação de entrada) */}
+          <div className="lg:col-span-5">
+            <div className="bg-navy-depth relative overflow-hidden rounded-[2rem] p-8 text-white shadow-[0_40px_80px_-45px_rgba(11,23,48,0.6)] sm:p-10">
+              <div className="relative z-10 -mx-8 -mt-8 mb-8 sm:-mx-10 sm:-mt-10">
+                <Image
+                  src={fotoRetrato}
+                  alt={`${site.lawyer.name}, advogado, no escritório`}
+                  placeholder="blur"
+                  preload
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                  className="aspect-[4/5] w-full object-cover object-top"
+                />
+                <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy-900 to-transparent" />
+              </div>
               <div aria-hidden="true" className="bg-lines pointer-events-none absolute inset-0" />
               <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full border border-gold-400/15" />
               <div className="relative">
-                <div className="grid size-20 place-items-center rounded-2xl border border-gold-400/40 bg-white/[0.03]">
-                  <span className="font-serif text-3xl font-semibold text-gold-300">MD</span>
-                </div>
-                <p className="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold-400">Advogado</p>
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold-400">Advogado</p>
                 <h2 className="display mt-3 text-4xl sm:text-[2.8rem]">{site.lawyer.name}</h2>
                 <div className="gold-rule my-7" />
                 <dl className="space-y-5 text-sm">
@@ -113,6 +125,23 @@ export default function SobrePage() {
                 forma clara os direitos, os deveres e os caminhos possíveis em cada situação, sempre a partir da análise
                 individual do caso.
               </p>
+            </div>
+
+            <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4" data-reveal>
+              <Image
+                src={fotoEscritorio}
+                alt={`${site.lawyer.name} no escritório`}
+                placeholder="blur"
+                sizes="(min-width: 1024px) 330px, 50vw"
+                className="aspect-[4/5] w-full rounded-2xl object-cover object-top"
+              />
+              <Image
+                src={fotoComputador}
+                alt={`${site.lawyer.name} trabalhando em sua mesa`}
+                placeholder="blur"
+                sizes="(min-width: 1024px) 330px, 50vw"
+                className="aspect-[4/5] w-full rounded-2xl object-cover object-top"
+              />
             </div>
 
             <div className="mt-14" data-reveal>

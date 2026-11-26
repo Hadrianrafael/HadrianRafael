@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { site } from "@/config/site";
@@ -10,6 +11,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArticleCard } from "@/components/sections/ArticleCard";
 import { UnitsSection } from "@/components/sections/UnitsSection";
 import { ContactBand } from "@/components/sections/ContactBand";
+import fotoMesa from "@/assets/fotos/marcos-mesa.jpg";
 
 export const metadata: Metadata = {
   ...pageMetadata({
@@ -109,6 +111,30 @@ export default function HomePage() {
             <h2 className="display mt-5 text-[2.35rem] text-navy-900 sm:text-5xl lg:text-[3.4rem]">
               Orientação jurídica clara, ética e individualizada
             </h2>
+            <figure className="mt-10 max-w-md pr-4">
+              <div className="relative">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.75rem] border border-gold-500/40"
+                />
+                <div className="relative overflow-hidden rounded-[1.75rem] bg-sand shadow-[0_40px_80px_-45px_rgba(11,23,48,0.55)]">
+                <Image
+                  src={fotoMesa}
+                  alt={`${site.lawyer.name}, advogado, em sua mesa no escritório`}
+                  placeholder="blur"
+                  sizes="(min-width: 1024px) 420px, (min-width: 640px) 448px, 100vw"
+                  className="aspect-[4/5] w-full object-cover object-[50%_35%]"
+                />
+                </div>
+              </div>
+              <figcaption className="relative mt-9 flex items-center gap-3 text-sm">
+                <span className="h-px w-8 bg-gold-500" aria-hidden="true" />
+                <span>
+                  <span className="font-semibold text-navy-900">{site.lawyer.name}</span>
+                  <span className="text-slate"> · {site.lawyer.oab}</span>
+                </span>
+              </figcaption>
+            </figure>
           </div>
           <div className="lg:col-span-7" data-reveal style={{ "--reveal-delay": "100ms" } as React.CSSProperties}>
             <div className="prose-legal">

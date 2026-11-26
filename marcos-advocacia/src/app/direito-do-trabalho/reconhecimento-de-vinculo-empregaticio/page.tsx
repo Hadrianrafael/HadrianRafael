@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Bot, FileText } from "lucide-react";
 import { aiAttendance, getSiteUrl, site } from "@/config/site";
@@ -12,6 +13,7 @@ import { UnitsSection } from "@/components/sections/UnitsSection";
 import { WhatsAppPicker } from "@/components/ui/WhatsAppPicker";
 import { WhatsAppIcon } from "@/components/ui/BrandIcons";
 import { JsonLd } from "@/components/ui/JsonLd";
+import fotoAvatar from "@/assets/fotos/marcos-avatar.jpg";
 
 const PATH = "/direito-do-trabalho/reconhecimento-de-vinculo-empregaticio";
 const TOPIC = "Reconhecimento de vínculo empregatício";
@@ -167,6 +169,18 @@ export default function Page() {
                 ))}
               </ol>
               <div className="card mt-8 hidden p-5 lg:block">
+                <div className="mb-3 flex items-center gap-3">
+                  <Image
+                    src={fotoAvatar}
+                    alt=""
+                    sizes="44px"
+                    className="size-11 rounded-full object-cover ring-2 ring-gold-500/40"
+                  />
+                  <p className="text-sm font-semibold leading-tight text-navy-900">
+                    {site.lawyer.name}
+                    <span className="block text-xs font-normal text-slate">{site.lawyer.oab}</span>
+                  </p>
+                </div>
                 <p className="text-xs leading-relaxed text-slate">
                   Conteúdo informativo elaborado sob responsabilidade de {site.lawyer.name} ({site.lawyer.oab}). Não
                   substitui a análise individual do caso.
