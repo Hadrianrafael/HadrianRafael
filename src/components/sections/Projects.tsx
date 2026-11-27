@@ -113,7 +113,7 @@ export function Projects({ d }: { d: Dictionary }) {
   const p = d.projects;
   const [first, ...rest] = p.items;
   return (
-    <section id="projetos" aria-labelledby="projetos-title" className="relative py-24 sm:py-32">
+    <section id="projetos" aria-labelledby="projetos-title" className="relative py-20 sm:py-28">
       <div aria-hidden className="hairline absolute inset-x-0 top-0" />
       <div className="container-page">
         <SectionHeading id="projetos" index="04" kicker={p.kicker} title={p.title} intro={p.intro} align="split" />
@@ -135,7 +135,7 @@ export function Projects({ d }: { d: Dictionary }) {
               href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full min-h-72 flex-col justify-between rounded-[1.25rem] border border-dashed border-white/12 p-6 transition hover:border-ember/40 hover:bg-ember/[0.03] sm:p-7"
+              className="group flex h-full flex-col justify-center gap-6 rounded-[1.25rem] border border-dashed border-white/12 p-6 transition hover:border-ember/40 hover:bg-ember/[0.03] sm:p-8"
             >
               <span className="grid size-11 place-items-center rounded-xl border border-white/10 text-mist transition group-hover:border-ember/40 group-hover:text-ember">
                 <Plus size={20} aria-hidden />

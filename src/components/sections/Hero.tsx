@@ -36,6 +36,15 @@ export function Hero({ d, locale }: { d: Dictionary; locale: Locale }) {
           </p>
           <p className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-mist sm:text-[1.05rem]">{h.text}</p>
 
+          <div className="mt-7 flex flex-wrap items-center gap-2">
+            <span className="mr-1 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted">{h.focusLabel}</span>
+            {h.focus.map((item) => (
+              <span key={item} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[0.8rem] font-medium text-paper/90">
+                {item}
+              </span>
+            ))}
+          </div>
+
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href="#sobre" className="btn btn-primary">
               {h.ctaJourney}
@@ -68,12 +77,12 @@ export function Hero({ d, locale }: { d: Dictionary; locale: Locale }) {
         </div>
 
         {/* Retrato */}
-        <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div
             aria-hidden
             className="absolute -inset-px rounded-[2rem] bg-gradient-to-b from-ember/50 via-white/10 to-flare/20 opacity-70"
           />
-          <figure className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-ink-850">
+          <figure className="relative aspect-[16/10] overflow-hidden rounded-[2rem] bg-ink-850 sm:aspect-[4/3] lg:aspect-[4/5]">
             {profile.photo ? (
               <Image
                 src={profile.photo}
@@ -88,7 +97,7 @@ export function Hero({ d, locale }: { d: Dictionary; locale: Locale }) {
                 <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_0%,rgb(255_107_26/0.22),transparent_55%),linear-gradient(180deg,#15131b,#0b0a0f)]" />
                 <div className="grid-bg absolute inset-0 opacity-60" />
                 <div className="absolute inset-0 grid place-items-center">
-                  <span className="select-none bg-gradient-to-b from-white/[0.16] to-white/[0.02] bg-clip-text text-[9rem] font-black leading-none tracking-[-0.08em] text-transparent sm:text-[11rem]">
+                  <span className="select-none bg-gradient-to-b from-white/[0.16] to-white/[0.02] bg-clip-text text-[5.5rem] font-black leading-none tracking-[-0.08em] text-transparent sm:text-[8rem] lg:text-[11rem]">
                     HR
                   </span>
                 </div>
@@ -100,7 +109,6 @@ export function Hero({ d, locale }: { d: Dictionary; locale: Locale }) {
                 <p className="text-lg font-bold tracking-tight text-paper">{profile.name}</p>
                 <p className="text-sm text-mist">{d.meta.jobTitle}</p>
               </div>
-              <span className="mb-1 h-px w-10 bg-gradient-to-r from-ember to-flare" aria-hidden />
             </figcaption>
           </figure>
 

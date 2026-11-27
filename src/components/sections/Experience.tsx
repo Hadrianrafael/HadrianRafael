@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export function Experience({ d }: { d: Dictionary }) {
   const e = d.experience;
   return (
-    <section id="experiencia" aria-labelledby="experiencia-title" className="relative py-24 sm:py-32">
+    <section id="experiencia" aria-labelledby="experiencia-title" className="relative py-20 sm:py-28">
       <div aria-hidden className="hairline absolute inset-x-0 top-0" />
       <div className="container-page">
         <SectionHeading id="experiencia" index="02" kicker={e.kicker} title={e.title} intro={e.intro} align="split" />

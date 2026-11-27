@@ -20,7 +20,7 @@ export function CopyEmail({ email, label, copiedLabel }: { email: string; label:
     <button
       type="button"
       onClick={copy}
-      className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-mist transition hover:border-ember/50 hover:text-paper"
+      className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-mist transition hover:border-ember/50 hover:text-paper"
       aria-label={copied ? copiedLabel : label}
       title={copied ? copiedLabel : label}
     >

@@ -1,15 +1,17 @@
+import { siteUrl } from "./profile";
 import type { Dictionary } from "./types";
 
 const pt: Dictionary = {
   meta: {
     htmlLang: "pt-BR",
     ogLocale: "pt_BR",
-    title: "Hadrian Rafael — Desenvolvimento de Software, Tecnologia e Negócios",
+    title: "Hadrian Rafael — Desenvolvimento de Software e Tecnologia",
     description:
-      "Portfólio profissional de Hadrian Rafael: desenvolvimento de software, inteligência artificial e soluções digitais, com experiência em operações, atendimento e relacionamento comercial.",
+      "Hadrian Rafael: desenvolvimento de software com Next.js, React e TypeScript, IA aplicada e experiência em atendimento, operações e vendas.",
     jobTitle: "Desenvolvimento de Software e Soluções Digitais",
   },
   nav: {
+    home: "Hadrian Rafael — página inicial",
     about: "Sobre",
     experience: "Experiência",
     skills: "Competências",
@@ -37,6 +39,8 @@ const pt: Dictionary = {
     ctaContact: "Entrar em contato",
     photoAlt: "Fotografia profissional de Hadrian Rafael",
     photoPlaceholder: "Espaço reservado para fotografia profissional",
+    focusLabel: "Foco",
+    focus: ["Desenvolvimento de Software", "Full Stack", "IA e Automação", "SDR / BDR", "Inside Sales"],
     facts: [
       { value: "5", label: "empresas na trajetória" },
       { value: "ADS", label: "graduação em andamento" },
@@ -50,7 +54,7 @@ const pt: Dictionary = {
     paragraphs: [
       "Sempre tive interesse por tecnologia e inovação — por entender como as coisas funcionam e como podem funcionar melhor. Esse interesse me levou à graduação em Análise e Desenvolvimento de Sistemas pela Anhanguera e ao desenvolvimento de software, área em que construo sites, sistemas web e soluções digitais.",
       "Minha trajetória profissional passou por atendimento ao cliente, operações e vendas. Nessas experiências aprendi a ouvir, entender necessidades reais, negociar e manter relacionamentos — habilidades que hoje aplico para desenvolver soluções que façam sentido para quem vai usá-las.",
-      "Também me dedico à inteligência artificial e à automação de processos, utilizando ferramentas como Claude, ChatGPT e Gemini no meu fluxo de trabalho. Desenvolvo projetos próprios e freelance, sempre deixando claro o que já foi entregue e o que ainda está em construção.",
+      "Também me dedico à inteligência artificial e à automação de processos, utilizando ferramentas como Claude, ChatGPT e Gemini no meu fluxo de trabalho. Desenvolvo projetos próprios e trabalhos freelance.",
     ],
     pillars: [
       { title: "Profissionalismo", text: "Compromisso com prazos, clareza na comunicação e responsabilidade com cada entrega." },
@@ -191,16 +195,24 @@ const pt: Dictionary = {
         slug: "portfolio",
         name: "Portfólio profissional",
         category: "Aplicação web",
-        status: "in-progress",
+        status: "completed",
         description:
-          "Este site: portfólio multilíngue (português, inglês e espanhol) com currículo em PDF, SEO técnico, acessibilidade e geração estática para carregamento rápido.",
+          "Este site, desenvolvido por mim: portfólio em português, inglês e espanhol, com currículo em PDF gerado a partir do mesmo conteúdo, SEO técnico, acessibilidade e geração estática.",
         goal: "Apresentar minha trajetória a recrutadores e empresas de forma clara, rápida e profissional.",
         stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+        image: {
+          src: "/images/projects/portfolio.webp",
+          alt: "Página inicial do portfólio de Hadrian Rafael em um navegador desktop",
+          width: 1440,
+          height: 900,
+        },
+        demoUrl: siteUrl,
+        repoUrl: "https://github.com/Hadrianrafael/HadrianRafael",
       },
     ],
-    moreTitle: "Novos projetos a caminho",
-    moreText: "Sistemas web, plataformas SaaS, aplicações com IA e automações em desenvolvimento serão adicionados aqui.",
-    moreCta: "Acompanhar no GitHub",
+    moreTitle: "Mais projetos no GitHub",
+    moreText: "Novos trabalhos serão publicados aqui à medida que forem concluídos. Acompanhe meus repositórios no GitHub.",
+    moreCta: "Ver perfil no GitHub",
   },
   education: {
     kicker: "Formação acadêmica",
@@ -272,7 +284,7 @@ const pt: Dictionary = {
   },
   resume: {
     pageTitle: "Currículo — Hadrian Rafael",
-    pageDescription: "Currículo de Hadrian Rafael: experiência profissional, formação, competências e idiomas.",
+    pageDescription: "Currículo de Hadrian Rafael: experiência em atendimento, suporte e vendas, formação em ADS, competências em desenvolvimento e IA, e idiomas.",
     download: "Baixar PDF",
     print: "Imprimir",
     back: "Voltar ao site",

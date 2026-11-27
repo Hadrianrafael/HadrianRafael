@@ -5,9 +5,9 @@ import "./globals.css";
 
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans", display: "swap" });
 
+// O Next.js já adiciona <meta name="robots" content="noindex"> às respostas 404.
 export const metadata: Metadata = {
   title: "404 — Hadrian Rafael",
-  robots: { index: false, follow: true },
 };
 
 export default function GlobalNotFound() {

@@ -10,7 +10,7 @@ export function Footer({ d, locale }: { d: Dictionary; locale: Locale }) {
     <footer className="relative print:hidden border-t border-white/[0.06] bg-ink-950/60">
       <div className="container-page grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Link href={`/${locale}`} className="inline-flex items-center gap-3">
+          <Link href={`/${locale}`} className="inline-flex min-h-11 items-center gap-3">
             <span className="grid size-9 place-items-center rounded-xl border border-white/10 bg-white/[0.04] font-mono text-[0.8rem] font-semibold text-paper">
               HR
             </span>
@@ -23,7 +23,7 @@ export function Footer({ d, locale }: { d: Dictionary; locale: Locale }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="grid size-10 place-items-center rounded-full border border-white/10 text-mist transition hover:border-ember/40 hover:text-paper"
+              className="grid size-11 place-items-center rounded-full border border-white/10 text-mist transition hover:border-ember/40 hover:text-paper"
             >
               <LinkedinIcon size={16} />
             </a>
@@ -32,7 +32,7 @@ export function Footer({ d, locale }: { d: Dictionary; locale: Locale }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="grid size-10 place-items-center rounded-full border border-white/10 text-mist transition hover:border-ember/40 hover:text-paper"
+              className="grid size-11 place-items-center rounded-full border border-white/10 text-mist transition hover:border-ember/40 hover:text-paper"
             >
               <GithubIcon size={16} />
             </a>
@@ -41,10 +41,10 @@ export function Footer({ d, locale }: { d: Dictionary; locale: Locale }) {
 
         <nav aria-label={f.navigation}>
           <h2 className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-faint">{f.navigation}</h2>
-          <ul className="mt-4 space-y-2.5 text-sm">
+          <ul className="mt-3 space-y-0.5 text-sm">
             {navItems(d).map((item) => (
               <li key={item.id}>
-                <a href={`/${locale}#${item.id}`} className="text-mist transition hover:text-paper">
+                <a href={`/${locale}#${item.id}`} className="inline-block py-3 text-mist transition hover:text-paper">
                   {item.label}
                 </a>
               </li>
@@ -54,31 +54,31 @@ export function Footer({ d, locale }: { d: Dictionary; locale: Locale }) {
 
         <div>
           <h2 className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-faint">{f.contact}</h2>
-          <ul className="mt-4 space-y-2.5 text-sm">
+          <ul className="mt-3 space-y-0.5 text-sm">
             <li>
-              <a href={`mailto:${profile.email}`} className="break-all text-mist transition hover:text-paper">
+              <a href={`mailto:${profile.email}`} className="inline-block break-all py-3 text-mist transition hover:text-paper">
                 {profile.email}
               </a>
             </li>
             <li>
-              <a href={profile.phoneHref} className="text-mist transition hover:text-paper">
+              <a href={profile.phoneHref} className="inline-block py-3 text-mist transition hover:text-paper">
                 {profile.phone}
               </a>
             </li>
-            <li className="text-muted">{d.contact.location}</li>
+            <li className="py-3 text-muted">{d.contact.location}</li>
           </ul>
         </div>
 
         <div>
           <h2 className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-faint">{f.documents}</h2>
-          <ul className="mt-4 space-y-2.5 text-sm">
+          <ul className="mt-3 space-y-0.5 text-sm">
             <li>
-              <Link href={`/${locale}/curriculo`} className="text-mist transition hover:text-paper">
+              <Link href={`/${locale}/curriculo`} className="inline-block py-3 text-mist transition hover:text-paper">
                 {f.resumeOnline}
               </Link>
             </li>
             <li>
-              <a href={resumePdfPath(locale)} download className="text-mist transition hover:text-paper">
+              <a href={resumePdfPath(locale)} download className="inline-block py-3 text-mist transition hover:text-paper">
                 {f.resumePdf}
               </a>
             </li>
@@ -93,7 +93,7 @@ export function Footer({ d, locale }: { d: Dictionary; locale: Locale }) {
           </p>
           <div className="flex items-center gap-6">
             <span>{f.built}</span>
-            <a href="#top" className="inline-flex items-center gap-1.5 text-mist transition hover:text-paper">
+            <a href="#top" className="inline-flex min-h-11 items-center gap-1.5 text-mist transition hover:text-paper">
               <ArrowUp size={13} aria-hidden />
               {f.backToTop}
             </a>

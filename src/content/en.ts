@@ -1,15 +1,17 @@
+import { siteUrl } from "./profile";
 import type { Dictionary } from "./types";
 
 const en: Dictionary = {
   meta: {
     htmlLang: "en",
     ogLocale: "en_US",
-    title: "Hadrian Rafael — Software Development, Technology & Business",
+    title: "Hadrian Rafael — Software Development & Technology",
     description:
-      "Professional portfolio of Hadrian Rafael: software development, artificial intelligence and digital solutions, with experience in operations, customer service and sales.",
+      "Hadrian Rafael: software development with Next.js, React and TypeScript, applied AI, and experience in customer service, operations and sales.",
     jobTitle: "Software Development & Digital Solutions",
   },
   nav: {
+    home: "Hadrian Rafael — home",
     about: "About",
     experience: "Experience",
     skills: "Skills",
@@ -37,6 +39,8 @@ const en: Dictionary = {
     ctaContact: "Get in touch",
     photoAlt: "Professional photo of Hadrian Rafael",
     photoPlaceholder: "Reserved for a professional photo",
+    focusLabel: "Focus",
+    focus: ["Software Development", "Full Stack", "AI & Automation", "SDR / BDR", "Inside Sales"],
     facts: [
       { value: "5", label: "companies so far" },
       { value: "ADS", label: "degree in progress" },
@@ -50,7 +54,7 @@ const en: Dictionary = {
     paragraphs: [
       "I have always been interested in technology and innovation — in understanding how things work and how they could work better. That interest led me to a degree in Systems Analysis and Development at Anhanguera and to software development, where I build websites, web systems and digital solutions.",
       "My professional path includes customer service, operations and sales. These experiences taught me to listen, understand real needs, negotiate and maintain relationships — skills I now apply to build solutions that make sense for the people who use them.",
-      "I am also dedicated to artificial intelligence and process automation, using tools such as Claude, ChatGPT and Gemini in my workflow. I build personal and freelance projects, always being clear about what has been delivered and what is still in progress.",
+      "I am also dedicated to artificial intelligence and process automation, using tools such as Claude, ChatGPT and Gemini in my workflow. I build personal projects and freelance work.",
     ],
     pillars: [
       { title: "Professionalism", text: "Commitment to deadlines, clear communication and ownership of every delivery." },
@@ -189,16 +193,24 @@ const en: Dictionary = {
         slug: "portfolio",
         name: "Professional portfolio",
         category: "Web application",
-        status: "in-progress",
+        status: "completed",
         description:
-          "This website: a multilingual portfolio (Portuguese, English and Spanish) with a PDF résumé, technical SEO, accessibility and static generation for fast loading.",
+          "This website, built by me: a portfolio in Portuguese, English and Spanish, with a PDF résumé generated from the same content, technical SEO, accessibility and static generation.",
         goal: "Present my career to recruiters and companies in a clear, fast and professional way.",
         stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+        image: {
+          src: "/images/projects/portfolio.webp",
+          alt: "Hadrian Rafael portfolio home page in a desktop browser",
+          width: 1440,
+          height: 900,
+        },
+        demoUrl: siteUrl,
+        repoUrl: "https://github.com/Hadrianrafael/HadrianRafael",
       },
     ],
-    moreTitle: "More projects on the way",
-    moreText: "Web systems, SaaS platforms, AI applications and automations in development will be added here.",
-    moreCta: "Follow on GitHub",
+    moreTitle: "More projects on GitHub",
+    moreText: "New work will be published here as it is completed. Follow my repositories on GitHub.",
+    moreCta: "View GitHub profile",
   },
   education: {
     kicker: "Education",
@@ -229,7 +241,7 @@ const en: Dictionary = {
         roles: ["SDR / BDR", "Sales Assistant", "Inside Sales", "B2B Sales"],
       },
     ],
-    differentialTitle: "The difference",
+    differentialTitle: "What sets me apart",
     differentialText:
       "I understand the technical language of those who build and the language of those who buy. This combination lets me translate business needs into solutions — and explain technical solutions clearly to customers.",
   },
@@ -244,7 +256,7 @@ const en: Dictionary = {
   },
   contact: {
     kicker: "Contact",
-    title: "Let's talk?",
+    title: "Let's talk.",
     text:
       "If you are a recruiter, a manager or represent a company, I would be glad to talk about opportunities and projects.",
     email: "Email",
@@ -270,7 +282,7 @@ const en: Dictionary = {
   },
   resume: {
     pageTitle: "Résumé — Hadrian Rafael",
-    pageDescription: "Résumé of Hadrian Rafael: professional experience, education, skills and languages.",
+    pageDescription: "Résumé of Hadrian Rafael: experience in customer service, support and sales, Systems Analysis studies, development and AI skills, and languages.",
     download: "Download PDF",
     print: "Print",
     back: "Back to website",

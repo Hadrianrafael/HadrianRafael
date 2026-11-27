@@ -22,7 +22,7 @@ export function Contact({ d, locale }: { d: Dictionary; locale: Locale }) {
   ];
 
   return (
-    <section id="contato" aria-labelledby="contato-title" className="relative overflow-hidden py-24 sm:py-32">
+    <section id="contato" aria-labelledby="contato-title" className="relative overflow-hidden py-20 sm:py-28">
       <div aria-hidden className="hairline absolute inset-x-0 top-0" />
       <div
         aria-hidden
@@ -54,7 +54,7 @@ export function Contact({ d, locale }: { d: Dictionary; locale: Locale }) {
                 </span>
                 <div className="min-w-0">
                   <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-faint">{c.email}</p>
-                  <a href={`mailto:${profile.email}`} className="block text-base font-semibold text-paper transition [overflow-wrap:anywhere] hover:text-ember sm:text-xl">
+                  <a href={`mailto:${profile.email}`} className="block py-2.5 text-base font-semibold text-paper transition [overflow-wrap:anywhere] hover:text-ember sm:text-xl">
                     {profile.email}
                   </a>
                 </div>

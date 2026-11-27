@@ -13,7 +13,7 @@ const meta: Record<SkillGroup["id"], { icon: LucideIcon; span: string; accent: s
 export function Skills({ d }: { d: Dictionary }) {
   const s = d.skills;
   return (
-    <section id="competencias" aria-labelledby="competencias-title" className="relative py-24 sm:py-32">
+    <section id="competencias" aria-labelledby="competencias-title" className="relative py-20 sm:py-28">
       <div aria-hidden className="hairline absolute inset-x-0 top-0" />
       <div className="container-page">
         <SectionHeading id="competencias" index="03" kicker={s.kicker} title={s.title} intro={s.intro} align="split" />

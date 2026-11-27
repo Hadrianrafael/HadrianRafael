@@ -75,7 +75,7 @@ O PDF é gerado a partir da página `/{locale}/curriculo`, então site e curríc
 Depois de alterar o conteúdo:
 
 ```bash
-pnpm build && pnpm start          # terminal 1
+NEXT_PUBLIC_SITE_URL=https://hadrianrafael-public.vercel.app pnpm build && pnpm start   # terminal 1
 pnpm resume:pdf                   # terminal 2 — gera public/documents/hadrian-rafael-curriculo-{pt,en,es}.pdf
 ```
 
@@ -84,26 +84,30 @@ algum currículo passar de uma página. Faça commit dos PDFs gerados.
 
 ## Publicação (Vercel)
 
-O repositório já está conectado ao projeto Vercel **`hadrianrafael-public`** (branch de produção `main`, domínio
-`www.hadrianrafael.com.br`). **Todo merge na `main` publica em produção.**
+Projeto Vercel **`hadrianrafael-public`**: Root Directory = raiz do repositório, Framework Preset = Next.js,
+branch de produção `main`. **Todo merge na `main` publica em produção.**
 
-> ⚠️ Em 27/11/2026 o projeto estava com **Root Directory = `public`** e **Framework Preset vazio**: a Vercel apenas
-> copiava a pasta `public/` e **não executava o build do Next.js** (build de ~40 ms). Antes de publicar, ajuste:
+- **URL pública atual:** https://hadrianrafael-public.vercel.app
+- **Variável de ambiente (Production):** `NEXT_PUBLIC_SITE_URL=https://hadrianrafael-public.vercel.app`
+  (usada em canonical, sitemap, Open Graph, JSON-LD e nos links dos PDFs; é lida no build).
 
-1. Em Project → Settings → Build and Deployment: **Root Directory = vazio (raiz do repositório)** e
-   **Framework Preset = Next.js**. Install/Build Command podem ficar no padrão (pnpm é detectado pelo lockfile).
-2. Gere um novo deploy de pré-visualização (Redeploy do PR) e revise o site.
-3. Recomendado: em Settings → Domains, adicione também `hadrianrafael.com.br` com redirecionamento para
-   `www.hadrianrafael.com.br`, para que os dois endereços funcionem.
-4. Variável opcional: `NEXT_PUBLIC_SITE_URL` (veja `.env.example`). O padrão já é `https://www.hadrianrafael.com.br`.
-5. Faça o merge na `main` e, após o deploy, envie `https://www.hadrianrafael.com.br/sitemap.xml` no Google Search Console.
+### Quando o domínio próprio estiver pronto
+
+1. No Registro.br (DNS → Editar zona): `CNAME www → d6bbd244367948ff.vercel-dns-017.com.` e, para o domínio sem
+   `www`, registros `A` para `216.198.79.1` e `64.29.17.1` (valores indicados pela Vercel).
+2. Na Vercel, `hadrianrafael.com.br` está hoje ligado ao projeto `hrtech-saas`; para usá-lo aqui, remova-o de lá e
+   adicione-o ao `hadrianrafael-public` com redirecionamento para `www.hadrianrafael.com.br`.
+3. Troque `NEXT_PUBLIC_SITE_URL` para `https://www.hadrianrafael.com.br`, regenere os PDFs (`pnpm resume:pdf` com
+   a mesma variável no build local), faça commit e um novo deploy.
+4. Envie `https://www.hadrianrafael.com.br/sitemap.xml` no Google Search Console.
 
 O projeto do site MDSilva (`marcos-advocacia/`) deve continuar em um projeto Vercel separado, com Root Directory
 `marcos-advocacia`. Se ele for alterado no mesmo commit, os dois projetos podem gerar deploy.
 
 ## Segurança e desempenho
 
-- Cabeçalhos de segurança em `next.config.ts` (CSP restrita a `'self'`, HSTS, `X-Frame-Options`, `Permissions-Policy`).
+- Cabeçalhos de segurança em `next.config.ts` (CSP restrita a `'self'`, HSTS, `X-Frame-Options`, `Permissions-Policy`,
+  `Cross-Origin-Opener-Policy`).
 - Nenhum script de terceiros, rastreamento ou cookie.
 - Animações em CSS com um único `IntersectionObserver`; tudo respeita `prefers-reduced-motion` e o conteúdo aparece
   mesmo sem JavaScript.
@@ -111,5 +115,9 @@ O projeto do site MDSilva (`marcos-advocacia/`) deve continuar em um projeto Ver
 
 ## Dados a confirmar antes de publicar
 
-Veja a lista atualizada no pull request. Itens principais: situação contratual na Teleperformance, previsão de
-conclusão do curso, cidade exibida, URL do LinkedIn, autorização para exibir o projeto MDSilva e a foto profissional.
+- Cargo e situação atual na Teleperformance ("Expert", março de 2026 — atual).
+- Previsão de conclusão de ADS (dezembro de 2026).
+- Cidade exibida (São Paulo, SP) e URL do LinkedIn.
+- Autorização para exibir o projeto MDSilva Advocacia e sua captura de tela.
+- Foto profissional (`public/images/profile/` + `photo` em `src/content/profile.ts`).
+- Cursos e certificações (`education.complementary`; a seção aparece automaticamente quando houver itens).

@@ -7,7 +7,7 @@ const pillarIcons = [ShieldCheck, TrendingUp, Lightbulb];
 
 export function About({ d }: { d: Dictionary }) {
   return (
-    <section id="sobre" aria-labelledby="sobre-title" className="relative py-24 sm:py-32">
+    <section id="sobre" aria-labelledby="sobre-title" className="relative py-20 sm:py-28">
       <div className="container-page">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">

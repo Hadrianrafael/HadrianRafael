@@ -53,6 +53,8 @@ export function personJsonLd(locale: Locale) {
   return {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
+    "@id": `${siteUrl}/${locale}#profile`,
+    name: d.meta.title,
     inLanguage: localeLabels[locale].hreflang,
     url: `${siteUrl}/${locale}`,
     mainEntity: {
@@ -66,7 +68,6 @@ export function personJsonLd(locale: Locale) {
       email: `mailto:${profile.email}`,
       sameAs: [profile.linkedin, profile.github],
       address: { "@type": "PostalAddress", addressLocality: "São Paulo", addressRegion: "SP", addressCountry: "BR" },
-      alumniOf: { "@type": "CollegeOrUniversity", name: "Anhanguera" },
       knowsLanguage: ["pt-BR", "en", "es"],
       knowsAbout: d.skills.groups.flatMap((g) => g.items).slice(0, 24),
     },
