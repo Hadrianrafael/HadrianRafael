@@ -84,11 +84,15 @@ algum currículo passar de uma página. Faça commit dos PDFs gerados.
 
 ## Publicação (Vercel)
 
-O repositório já está conectado ao projeto Vercel **`hadrianrafael-public`** (Root Directory na raiz, branch de
-produção `main`, domínio `www.hadrianrafael.com.br`). **Todo merge na `main` publica em produção.**
+O repositório já está conectado ao projeto Vercel **`hadrianrafael-public`** (branch de produção `main`, domínio
+`www.hadrianrafael.com.br`). **Todo merge na `main` publica em produção.**
 
-1. Revise o deploy de pré-visualização gerado para o pull request.
-2. Em Project → Settings → Build and Deployment, confirme **Framework Preset = Next.js** (hoje o campo está vazio).
+> ⚠️ Em 27/11/2026 o projeto estava com **Root Directory = `public`** e **Framework Preset vazio**: a Vercel apenas
+> copiava a pasta `public/` e **não executava o build do Next.js** (build de ~40 ms). Antes de publicar, ajuste:
+
+1. Em Project → Settings → Build and Deployment: **Root Directory = vazio (raiz do repositório)** e
+   **Framework Preset = Next.js**. Install/Build Command podem ficar no padrão (pnpm é detectado pelo lockfile).
+2. Gere um novo deploy de pré-visualização (Redeploy do PR) e revise o site.
 3. Recomendado: em Settings → Domains, adicione também `hadrianrafael.com.br` com redirecionamento para
    `www.hadrianrafael.com.br`, para que os dois endereços funcionem.
 4. Variável opcional: `NEXT_PUBLIC_SITE_URL` (veja `.env.example`). O padrão já é `https://www.hadrianrafael.com.br`.
