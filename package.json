@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "resume:pdf": "node scripts/generate-resume-pdf.mjs",
     "check": "pnpm typecheck && pnpm lint && pnpm build"
   },

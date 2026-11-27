@@ -45,45 +45,45 @@ export function Contact({ d, locale }: { d: Dictionary; locale: Locale }) {
         </div>
 
         <div className="mx-auto mt-12 max-w-4xl" data-reveal>
-          <div className="surface p-3 sm:p-4">
+          <div className="surface p-2 sm:p-4">
             {/* E-mail em destaque */}
-            <div className="flex flex-col gap-4 rounded-2xl border border-white/[0.07] bg-ink-850/80 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+            <div className="flex flex-col gap-4 rounded-2xl border border-white/[0.07] bg-ink-850/80 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-6">
               <div className="flex min-w-0 items-center gap-4">
                 <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-b from-ember to-flare text-ink-950">
                   <Mail size={20} aria-hidden />
                 </span>
                 <div className="min-w-0">
                   <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-faint">{c.email}</p>
-                  <a href={`mailto:${profile.email}`} className="block break-all text-base font-semibold text-paper transition hover:text-ember sm:text-xl">
+                  <a href={`mailto:${profile.email}`} className="block text-base font-semibold text-paper transition [overflow-wrap:anywhere] hover:text-ember sm:text-xl">
                     {profile.email}
                   </a>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <CopyEmail email={profile.email} label={c.copy} copiedLabel={c.copied} />
-                <a href={`mailto:${profile.email}`} className="btn btn-primary flex-1 sm:flex-none">
+                <a href={`mailto:${profile.email}`} className="btn btn-primary min-w-0 flex-1 !px-4 sm:flex-none sm:!px-5">
                   {d.hero.ctaContact}
                   <ArrowUpRight size={16} aria-hidden />
                 </a>
               </div>
             </div>
 
-            <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {channels.map((ch) => {
                 const Icon = ch.icon;
                 return (
-                  <li key={ch.label}>
+                  <li key={ch.label} className="min-w-0">
                     <a
                       href={ch.href}
                       {...(ch.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className="group flex items-center gap-4 rounded-2xl border border-white/[0.06] bg-white/[0.015] p-4 transition hover:border-white/15 hover:bg-white/[0.04]"
+                      className="group flex items-center gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.015] p-3 transition hover:border-white/15 hover:bg-white/[0.04] sm:gap-4 sm:p-4"
                     >
                       <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-white/10 text-mist transition group-hover:text-ember">
                         <Icon size={18} />
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="block font-mono text-[0.68rem] uppercase tracking-[0.16em] text-faint">{ch.label}</span>
-                        <span className="block truncate text-[0.95rem] font-medium text-paper">{ch.value}</span>
+                        <span className="block break-words text-[0.95rem] font-medium text-paper [overflow-wrap:anywhere]">{ch.value}</span>
                       </span>
                       <ArrowUpRight size={16} aria-hidden className="text-faint transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-paper" />
                     </a>
