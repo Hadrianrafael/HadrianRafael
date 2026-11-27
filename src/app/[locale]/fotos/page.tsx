@@ -1,5 +1,0 @@
-import Link from "next/link";
-import { Header } from "@/components/Header";
-import { getCopy, profile, type Locale } from "@/data/content";
-import { media } from "@/data/media";
-export default async function Photos({params}:{params:Promise<{locale:Locale}>}){const {locale}=await params;const c=getCopy(locale);return <><Header locale={locale} nav={c.nav}/><main className="photos-page"><p className="eyebrow">04 — {c.photos}</p><h1>Images that will<br/><em>tell the story.</em></h1><p className="photos-lead">{c.emptyGallery}</p><div className="gallery-placeholder"><span>PHOTO ARCHIVE</span><strong>+</strong><small>Adicionar imagens em<br/><code>public/images/gallery/</code></small></div><div className="photo-notes"><div><b>Profile</b><span>{media.profile.src||"Aguardando fotografia profissional"}</span></div><div><b>Gallery</b><span>public/images/gallery/</span></div><div><b>Projects</b><span>public/images/projects/</span></div></div><Link className="text-link" href={`/${locale}`}>← {c.backTop}</Link></main><footer><span>© {new Date().getFullYear()} {profile.shortName}</span><span>{c.copyright}</span></footer></>}
