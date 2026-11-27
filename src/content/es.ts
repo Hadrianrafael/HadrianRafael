@@ -1,15 +1,17 @@
+import { siteUrl } from "./profile";
 import type { Dictionary } from "./types";
 
 const es: Dictionary = {
   meta: {
     htmlLang: "es",
     ogLocale: "es_ES",
-    title: "Hadrian Rafael — Desarrollo de Software, Tecnología y Negocios",
+    title: "Hadrian Rafael — Desarrollo de Software y Tecnología",
     description:
-      "Portafolio profesional de Hadrian Rafael: desarrollo de software, inteligencia artificial y soluciones digitales, con experiencia en operaciones, atención al cliente y relación comercial.",
+      "Hadrian Rafael: desarrollo de software con Next.js, React y TypeScript, IA aplicada y experiencia en atención al cliente, operaciones y ventas.",
     jobTitle: "Desarrollo de Software y Soluciones Digitales",
   },
   nav: {
+    home: "Hadrian Rafael — inicio",
     about: "Sobre mí",
     experience: "Experiencia",
     skills: "Competencias",
@@ -37,6 +39,8 @@ const es: Dictionary = {
     ctaContact: "Contactar",
     photoAlt: "Fotografía profesional de Hadrian Rafael",
     photoPlaceholder: "Espacio reservado para fotografía profesional",
+    focusLabel: "Enfoque",
+    focus: ["Desarrollo de Software", "Full Stack", "IA y Automatización", "SDR / BDR", "Inside Sales"],
     facts: [
       { value: "5", label: "empresas en la trayectoria" },
       { value: "ADS", label: "carrera en curso" },
@@ -50,7 +54,7 @@ const es: Dictionary = {
     paragraphs: [
       "Siempre me ha interesado la tecnología y la innovación — entender cómo funcionan las cosas y cómo podrían funcionar mejor. Ese interés me llevó a la carrera de Análisis y Desarrollo de Sistemas en Anhanguera y al desarrollo de software, área en la que construyo sitios, sistemas web y soluciones digitales.",
       "Mi trayectoria profesional pasó por la atención al cliente, las operaciones y las ventas. En esas experiencias aprendí a escuchar, entender necesidades reales, negociar y mantener relaciones — habilidades que hoy aplico para desarrollar soluciones que tengan sentido para quienes las usan.",
-      "También me dedico a la inteligencia artificial y a la automatización de procesos, utilizando herramientas como Claude, ChatGPT y Gemini en mi flujo de trabajo. Desarrollo proyectos propios y freelance, dejando siempre claro lo que ya se entregó y lo que aún está en construcción.",
+      "También me dedico a la inteligencia artificial y a la automatización de procesos, utilizando herramientas como Claude, ChatGPT y Gemini en mi flujo de trabajo. Desarrollo proyectos propios y trabajos freelance.",
     ],
     pillars: [
       { title: "Profesionalismo", text: "Compromiso con los plazos, comunicación clara y responsabilidad en cada entrega." },
@@ -84,7 +88,7 @@ const es: Dictionary = {
         role: "Consultor de Ventas — Vivo Fibra",
         period: "Nov 2024 — Dic 2025",
         start: "2024-11",
-        summary: "Actuación comercial en el sector de telecomunicaciones, con foco en la venta de internet y servicios Vivo Fibra.",
+        summary: "Ventas en el sector de telecomunicaciones, con foco en planes de internet y servicios Vivo Fibra.",
         highlights: [
           "Contacto con clientes e identificación de necesidades.",
           "Presentación de soluciones, negociación y cierre de ventas.",
@@ -189,16 +193,24 @@ const es: Dictionary = {
         slug: "portfolio",
         name: "Portafolio profesional",
         category: "Aplicación web",
-        status: "in-progress",
+        status: "completed",
         description:
-          "Este sitio: portafolio multilingüe (portugués, inglés y español) con CV en PDF, SEO técnico, accesibilidad y generación estática para una carga rápida.",
+          "Este sitio, desarrollado por mí: portafolio en portugués, inglés y español, con CV en PDF generado a partir del mismo contenido, SEO técnico, accesibilidad y generación estática.",
         goal: "Presentar mi trayectoria a reclutadores y empresas de forma clara, rápida y profesional.",
         stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+        image: {
+          src: "/images/projects/portfolio.webp",
+          alt: "Página de inicio del portafolio de Hadrian Rafael en un navegador de escritorio",
+          width: 1440,
+          height: 900,
+        },
+        demoUrl: siteUrl,
+        repoUrl: "https://github.com/Hadrianrafael/HadrianRafael",
       },
     ],
-    moreTitle: "Nuevos proyectos en camino",
-    moreText: "Sistemas web, plataformas SaaS, aplicaciones con IA y automatizaciones en desarrollo se añadirán aquí.",
-    moreCta: "Seguir en GitHub",
+    moreTitle: "Más proyectos en GitHub",
+    moreText: "Los nuevos trabajos se publicarán aquí a medida que se terminen. Sigue mis repositorios en GitHub.",
+    moreCta: "Ver perfil en GitHub",
   },
   education: {
     kicker: "Formación académica",
@@ -270,7 +282,7 @@ const es: Dictionary = {
   },
   resume: {
     pageTitle: "Currículum — Hadrian Rafael",
-    pageDescription: "Currículum de Hadrian Rafael: experiencia profesional, formación, competencias e idiomas.",
+    pageDescription: "Currículum de Hadrian Rafael: experiencia en atención, soporte y ventas, estudios de ADS, competencias en desarrollo e IA, e idiomas.",
     download: "Descargar PDF",
     print: "Imprimir",
     back: "Volver al sitio",

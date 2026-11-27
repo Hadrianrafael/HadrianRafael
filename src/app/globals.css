@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss" source("..");
 
 /* ---------------------------------------------------------------------------
    Design tokens — preto (base), branco (texto), laranja (destaque), vermelho (detalhe)
@@ -12,7 +12,7 @@
   --color-paper: #f5f3ef;
   --color-mist: #b9b6c0;
   --color-muted: #8e8a96;
-  --color-faint: #5f5b67;
+  --color-faint: #7a7683;
   --color-ember: #ff6b1a;
   --color-ember-soft: #ff8c42;
   --color-flare: #e8383d;

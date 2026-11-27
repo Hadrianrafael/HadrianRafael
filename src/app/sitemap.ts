@@ -15,7 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency,
       priority: locale === "pt" ? priority : Math.round((priority - 0.1) * 10) / 10,
       alternates: {
-        languages: Object.fromEntries(locales.map((l) => [localeLabels[l].hreflang, `${siteUrl}/${l}${path}`])),
+        languages: {
+          ...Object.fromEntries(locales.map((l) => [localeLabels[l].hreflang, `${siteUrl}/${l}${path}`])),
+          "x-default": `${siteUrl}/pt${path}`,
+        },
       },
     })),
   );

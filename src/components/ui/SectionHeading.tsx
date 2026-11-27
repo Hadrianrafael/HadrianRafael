@@ -13,7 +13,7 @@ export function SectionHeading({ id, index, kicker, title, intro, align = "left"
       data-reveal
       className={
         align === "split"
-          ? "mb-12 grid gap-6 md:mb-16 md:grid-cols-[1.1fr_0.9fr] md:items-end md:gap-12"
+          ? "mb-12 grid gap-6 md:mb-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-12"
           : "mb-12 max-w-3xl md:mb-16"
       }
     >
@@ -24,7 +24,7 @@ export function SectionHeading({ id, index, kicker, title, intro, align = "left"
         </p>
         <h2
           id={`${id}-title`}
-          className="mt-5 text-balance text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.035em] text-paper sm:text-5xl md:text-[3.4rem]"
+          className="mt-5 text-balance text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.035em] text-paper sm:text-5xl lg:text-[3.4rem]"
         >
           {title}
         </h2>

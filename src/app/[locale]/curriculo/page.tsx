@@ -4,21 +4,29 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PrintButton } from "@/components/ui/PrintButton";
 import { getDictionary, isLocale, profile, resumePdfPath } from "@/content";
-import { alternates } from "@/lib/seo";
+import { alternates, baseMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/curriculo">): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const d = getDictionary(locale);
+  const base = baseMetadata(locale);
   return {
     title: { absolute: d.resume.pageTitle },
     description: d.resume.pageDescription,
     alternates: alternates(locale, "/curriculo"),
     openGraph: {
+      ...base.openGraph,
       title: d.resume.pageTitle,
       description: d.resume.pageDescription,
       url: `/${locale}/curriculo`,
       images: [{ url: `/${locale}/opengraph-image`, width: 1200, height: 630, alt: profile.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: d.resume.pageTitle,
+      description: d.resume.pageDescription,
+      images: [`/${locale}/opengraph-image`],
     },
   };
 }
@@ -76,39 +84,6 @@ export default async function ResumePage({ params }: PageProps<"/[locale]/curric
         </section>
 
         <section className="mt-3">
-          <h2 className="resume-h2">{r.experienceTitle}</h2>
-          <div className="space-y-2">
-            {d.experience.items.map((item) => (
-              <div key={item.company} className="break-inside-avoid">
-                <h3 className="flex flex-wrap items-baseline justify-between gap-x-3 text-[10pt] font-bold text-[#0b0a0f]">
-                  <span>
-                    {item.role} — {item.company}
-                  </span>
-                  <span className="text-[8.8pt] font-medium text-[#57525e]">{item.period}</span>
-                </h3>
-                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 marker:text-[#ff6b1a]">
-                  <li>{item.summary}</li>
-                  {item.highlights.map((h) => (
-                    <li key={h}>{h}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-3">
-          <h2 className="resume-h2">{r.educationTitle}</h2>
-          <h3 className="flex flex-wrap items-baseline justify-between gap-x-3 text-[10pt] font-bold text-[#0b0a0f]">
-            <span>
-              {d.education.degree} — {d.education.institution}
-            </span>
-            <span className="text-[8.8pt] font-medium text-[#57525e]">{d.education.status}</span>
-          </h3>
-          <p>{d.education.expected}</p>
-        </section>
-
-        <section className="mt-3">
           <h2 className="resume-h2">{r.skillsTitle}</h2>
           <ul className="space-y-0.5">
             {[devGroup, aiGroup, designGroup, proGroup].map((g) =>
@@ -127,9 +102,53 @@ export default async function ResumePage({ params }: PageProps<"/[locale]/curric
             {d.projects.items.map((p) => (
               <li key={p.slug}>
                 <strong className="text-[#0b0a0f]">{p.name}</strong> ({d.projects.status[p.status]}) — {p.category}. {p.stack.join(", ")}.
+                {p.demoUrl ? (
+                  <>
+                    {" "}
+                    <a href={p.demoUrl} className="whitespace-nowrap">{p.demoUrl.replace(/^https?:\/\//, "")}</a>
+                  </>
+                ) : null}
+                {p.repoUrl ? (
+                  <>
+                    {" · "}
+                    <a href={p.repoUrl} className="whitespace-nowrap">{p.repoUrl.replace(/^https?:\/\//, "")}</a>
+                  </>
+                ) : null}
               </li>
             ))}
           </ul>
+        </section>
+
+        <section className="mt-3">
+          <h2 className="resume-h2">{r.experienceTitle}</h2>
+          <div className="space-y-2">
+            {d.experience.items.map((item) => (
+              <div key={item.company} className="break-inside-avoid">
+                <h3 className="flex flex-wrap items-baseline justify-between gap-x-3 text-[10pt] font-bold text-[#0b0a0f]">
+                  <span>
+                    {item.role} — {item.company}
+                  </span>
+                  <span className="text-[8.8pt] font-medium text-[#57525e]">{item.period}</span>
+                </h3>
+                <ul className="mt-0.5 list-disc space-y-0.5 pl-4 marker:text-[#ff6b1a]">
+                  {item.highlights.map((h) => (
+                    <li key={h}>{h}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-3">
+          <h2 className="resume-h2">{r.educationTitle}</h2>
+          <h3 className="flex flex-wrap items-baseline justify-between gap-x-3 text-[10pt] font-bold text-[#0b0a0f]">
+            <span>
+              {d.education.degree} — {d.education.institution}
+            </span>
+            <span className="text-[8.8pt] font-medium text-[#57525e]">{d.education.status}</span>
+          </h3>
+          <p>{d.education.expected}</p>
         </section>
 
         <section className="mt-3">

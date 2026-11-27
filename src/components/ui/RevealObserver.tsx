@@ -1,12 +1,16 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 /**
  * Observa todos os elementos com [data-reveal] e marca [data-shown] quando entram na tela.
  * Um único observer para a página inteira mantém o custo de JavaScript mínimo.
+ * Reexecuta a cada troca de rota, pois o layout (e este componente) permanece montado.
  */
 export function RevealObserver() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]:not([data-shown])"));
     if (!("IntersectionObserver" in window)) {
@@ -26,7 +30,7 @@ export function RevealObserver() {
     );
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }

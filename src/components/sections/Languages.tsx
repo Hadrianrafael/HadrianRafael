@@ -3,7 +3,7 @@ import type { Dictionary } from "@/content";
 export function Languages({ d }: { d: Dictionary }) {
   const l = d.languages;
   return (
-    <section aria-labelledby="idiomas-title" className="relative -mt-8 pb-24 sm:-mt-12 sm:pb-32">
+    <section aria-labelledby="idiomas-title" className="relative -mt-8 pb-20 sm:-mt-12 sm:pb-28">
       <div className="container-page">
         <div className="surface grid gap-10 p-7 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div data-reveal>

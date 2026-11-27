@@ -1,6 +1,7 @@
 /**
  * Dados pessoais compartilhados entre idiomas, site, currículo e metadados.
- * Antes de publicar, confira os itens marcados como "A CONFIRMAR" no README.
+ * A URL pública vem de NEXT_PUBLIC_SITE_URL (definida na Vercel); o valor abaixo é o padrão.
+ * Dados que ainda dependem de confirmação estão listados no README.
  */
 export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.hadrianrafael.com.br").replace(/\/$/, "");
 

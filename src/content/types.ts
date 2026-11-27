@@ -54,6 +54,7 @@ export interface Dictionary {
     jobTitle: string;
   };
   nav: {
+    home: string;
     about: string;
     experience: string;
     skills: string;
@@ -79,6 +80,8 @@ export interface Dictionary {
     ctaContact: string;
     photoAlt: string;
     photoPlaceholder: string;
+    focusLabel: string;
+    focus: string[];
     facts: { value: string; label: string }[];
     scroll: string;
   };

@@ -8,7 +8,7 @@ const trackIcons = [Cpu, Handshake];
 export function Goals({ d }: { d: Dictionary }) {
   const g = d.goals;
   return (
-    <section id="objetivos" aria-labelledby="objetivos-title" className="relative py-24 sm:py-32">
+    <section id="objetivos" aria-labelledby="objetivos-title" className="relative py-20 sm:py-28">
       <div aria-hidden className="hairline absolute inset-x-0 top-0" />
       <div className="container-page">
         <SectionHeading id="objetivos" index="06" kicker={g.kicker} title={g.title} intro={g.intro} align="split" />
