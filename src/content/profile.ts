@@ -20,7 +20,7 @@ export const profile = {
   website: siteUrl,
   websiteLabel: siteUrl.replace(/^https?:\/\/(www\.)?/, ""),
   /** Caminho em /public. Deixe vazio enquanto a foto profissional não for adicionada. */
-  photo: "" as string,
+  photo: "/images/profile/hadrian-rafael.webp" as string,
 } as const;
 
 export function resumePdfPath(locale: string) {

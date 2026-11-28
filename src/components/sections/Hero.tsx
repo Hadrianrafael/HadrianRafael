@@ -77,21 +77,29 @@ export function Hero({ d, locale }: { d: Dictionary; locale: Locale }) {
         </div>
 
         {/* Retrato */}
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+        <div className={`relative mx-auto w-full lg:max-w-none ${profile.photo ? "max-w-sm sm:max-w-md" : "max-w-md"}`}>
           <div
             aria-hidden
             className="absolute -inset-px rounded-[2rem] bg-gradient-to-b from-ember/50 via-white/10 to-flare/20 opacity-70"
           />
-          <figure className="relative aspect-[16/10] overflow-hidden rounded-[2rem] bg-ink-850 sm:aspect-[4/3] lg:aspect-[4/5]">
+          <figure
+            className={`relative overflow-hidden rounded-[2rem] bg-ink-850 ${
+              profile.photo ? "aspect-[4/5]" : "aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/5]"
+            }`}
+          >
             {profile.photo ? (
-              <Image
-                src={profile.photo}
-                alt={h.photoAlt}
-                fill
-                priority
-                sizes="(min-width: 1024px) 420px, 90vw"
-                className="object-cover"
-              />
+              <>
+                <Image
+                  src={profile.photo}
+                  alt={h.photoAlt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 460px, (min-width: 640px) 448px, 90vw"
+                  className="object-cover object-top"
+                />
+                {/* Escurece a base para a legenda ficar legível */}
+                <div aria-hidden className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink-950/90 via-ink-950/40 to-transparent" />
+              </>
             ) : (
               <div role="img" aria-label={h.photoPlaceholder} className="absolute inset-0">
                 <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_0%,rgb(255_107_26/0.22),transparent_55%),linear-gradient(180deg,#15131b,#0b0a0f)]" />
